@@ -10,6 +10,6 @@ export class DummyDataService {
 
     getDummyData()
     {
-        return this._http.get('https://us-central1-sep6s20.cloudfunctions.net/getDummyData');
+        return this._http.get('https://manufacturersapi-do62tzdoqq-ew.a.run.app/getDummyData?key=AIzaSyBnvzAxsFIL9KgCJcKcAnjYizegXD9bInE');
     }
 }
