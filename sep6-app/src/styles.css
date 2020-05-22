@@ -13,18 +13,10 @@ body {
     height: 100%;
 }
 
-a {
-    color: rgb(75, 123, 255);
-}
-
-a:hover {
-    color: blueviolet;
-}
-
 .shadow {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 5px 6px rgba(0, 0, 0, 0.3);
 }
 
 .section-container {
-    padding: 30px;
+    padding: 10px;
 }
