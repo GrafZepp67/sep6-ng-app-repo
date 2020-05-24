@@ -5,10 +5,10 @@ import { SectionWeatherComponent } from './app/sections/section-weather/section-
 import { SectionManufacturersComponent } from './app/sections/section-manufacturers/section-manufacturers.component';
 
 export const appRoutes: Routes = [
+    { path: '', redirectTo: '/dummy', pathMatch: 'full'},
     { path: 'dummy', component: SectionDummyComponent },
     { path: 'flights', component: SectionFlightsComponent },
     { path: 'weather', component: SectionWeatherComponent },
     { path: 'manufacturers', component: SectionManufacturersComponent },
-
-    { path: '', redirectTo: '/dummy', pathMatch: 'full'}
+    { path: '**', redirectTo: '/dummy', pathMatch: 'full'},
 ];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Dummy } from 'src/app/models/dummy';
-import { DummyDataService } from 'src/app/services/dummy-data.service';
+import { Dummy } from '../../models/dummy';
+import { DummyDataService } from '../../services/dummy-data.service';
 
 @Component({
   selector: 'app-section-dummy',

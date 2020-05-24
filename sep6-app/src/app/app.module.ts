@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { appRoutes } from 'src/routes';
+import { appRoutes } from '../../src/routes';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -38,7 +38,7 @@ import { ManufacturerDataService } from './services/manufacturer-data.service';
     FlightsDataService,
     WeatherDataService,
     ManufacturerDataService,
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })
