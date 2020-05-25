@@ -45,6 +45,7 @@ import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.compo
 import { DummyPage5Component } from './pages/dummy/dummy-page5/dummy-page5.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
+import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartstacked.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.c
     BarChartComponent,
     DummyPage5Component,
     BarChartmultiComponent,
+    BarChartstackedComponent,
   ],
   imports: [
     BrowserModule,
