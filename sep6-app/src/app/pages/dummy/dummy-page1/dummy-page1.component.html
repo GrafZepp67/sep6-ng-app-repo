@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <div class="section-container">
+            <h3>Get dummy data using Cloud Endpoint + Cloud Function + MySQL Database</h3>
+            <br>
+            <div *ngIf="showSpinner" class="pgr-spinner">
+                <app-progress-spinner></app-progress-spinner>
+            </div>
+            <table *ngIf="showTable" class="table table-inverse table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Initials</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.initials }}</td>
+                        <td>{{ item.age }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card-content>
+</mat-card>

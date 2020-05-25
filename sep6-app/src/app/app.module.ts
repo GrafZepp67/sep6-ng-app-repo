@@ -36,6 +36,11 @@ import { ManufacturersPage1Component } from './pages/manufacturers/manufacturers
 import { ManufacturersPage2Component } from './pages/manufacturers/manufacturers-page2/manufacturers-page2.component';
 import { ManufacturersPage3Component } from './pages/manufacturers/manufacturers-page3/manufacturers-page3.component';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
+import { DummyTabgroupComponent } from './tabgroups/dummy-tabgroup/dummy-tabgroup.component';
+import { DummyPage1Component } from './pages/dummy/dummy-page1/dummy-page1.component';
+import { DummyPage2Component } from './pages/dummy/dummy-page2/dummy-page2.component';
+import { DummyPage3Component } from './pages/dummy/dummy-page3/dummy-page3.component';
+import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +67,11 @@ import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.co
     ManufacturersPage2Component,
     ManufacturersPage3Component,
     ProgressSpinnerComponent,
+    DummyTabgroupComponent,
+    DummyPage1Component,
+    DummyPage2Component,
+    DummyPage3Component,
+    DummyPage4Component,
   ],
   imports: [
     BrowserModule,

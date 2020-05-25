@@ -32,3 +32,18 @@ body {
 .mat-spinner circle {
     stroke: crimson !important;
 }
+
+.mat-card {
+    background-color: #161A1E !important;
+}
+
+.mat-card-content {
+    color: white;
+    background-color: #161A1E !important;
+}
+
+.pgr-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
