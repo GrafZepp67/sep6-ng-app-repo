@@ -9,7 +9,7 @@ html {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: rgb(15, 15, 15);
+    background-color: black;
     color: white;
     height: 100%;
 }
@@ -23,5 +23,7 @@ body {
 }
 
 .mat-tab-label {
-    background-color: teal;
+    font-size: 16px;
+    color: white !important;
+    background-color: teal !important;
 }
