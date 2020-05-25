@@ -1,7 +1,11 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { appRoutes } from '../../src/routes';
@@ -16,8 +20,6 @@ import { DummyDataService } from './services/dummy-data.service';
 import { FlightsDataService } from './services/flights-data.service';
 import { WeatherDataService } from './services/weather-data.service';
 import { ManufacturerDataService } from './services/manufacturer-data.service';
-import { MatTabsModule } from '@angular/material/tabs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlightsTabgroupComponent } from './tabgroups/flights-tabgroup/flights-tabgroup.component';
 import { FlightsPage1Component } from './pages/flights/flights-page1/flights-page1.component';
 import { FlightsPage2Component } from './pages/flights/flights-page2/flights-page2.component';
@@ -33,6 +35,7 @@ import { ManufacturersTabgroupComponent } from './tabgroups/manufacturers-tabgro
 import { ManufacturersPage1Component } from './pages/manufacturers/manufacturers-page1/manufacturers-page1.component';
 import { ManufacturersPage2Component } from './pages/manufacturers/manufacturers-page2/manufacturers-page2.component';
 import { ManufacturersPage3Component } from './pages/manufacturers/manufacturers-page3/manufacturers-page3.component';
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,7 @@ import { ManufacturersPage3Component } from './pages/manufacturers/manufacturers
     ManufacturersPage1Component,
     ManufacturersPage2Component,
     ManufacturersPage3Component,
+    ProgressSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { ManufacturersPage3Component } from './pages/manufacturers/manufacturers
     AppRoutingModule,
     HttpClientModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [
     DummyDataService,

@@ -1,0 +1,12 @@
+::ng-deep .mat-card,
+.mat-card-content {
+    color: white;
+    background-color: black !important;
+}
+
+.pgr-spinner {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

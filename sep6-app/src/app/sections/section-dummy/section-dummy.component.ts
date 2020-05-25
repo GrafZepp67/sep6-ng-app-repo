@@ -11,14 +11,19 @@ export class SectionDummyComponent implements OnInit {
 
   constructor(private _dummyDataService: DummyDataService) { }
 
+  showSpinner = true;
+  showTable = false;
+
   public items: Dummy[] = [];
 
   ngOnInit(): void 
   {
     this._dummyDataService.getDummyData()
     .subscribe(response => 
-      {
+      {        
         this.items = this.listAllItems(response);
+        this.showSpinner = false;
+        this.showTable = true;
       });
   }
 
