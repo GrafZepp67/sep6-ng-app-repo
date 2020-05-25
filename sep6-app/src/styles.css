@@ -27,3 +27,8 @@ body {
     color: white !important;
     background-color: teal !important;
 }
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: crimson !important;
+}

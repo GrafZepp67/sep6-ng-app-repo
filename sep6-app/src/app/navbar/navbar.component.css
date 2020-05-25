@@ -16,5 +16,17 @@
 }
 
 .fa-plane {
-    color: red;
+    color: crimson;
+}
+
+.btn-logoff {
+    color: white;
+    background-color: #161A1E !important;
+    border: 1px solid crimson;
+}
+
+.btn-logoff:hover {
+    color: white;
+    background-color: crimson !important;
+    border: 1px solid white;
 }

@@ -3,9 +3,9 @@ a {
 }
 
 a:hover {
-    color: rgb(248, 120, 35);
+    color: orangered;
 }
 
 a:focus {
-    color: rgb(35, 248, 46);
+    color: cyan;
 }
