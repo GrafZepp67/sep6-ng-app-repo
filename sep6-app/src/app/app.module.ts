@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { appRoutes } from '../../src/routes';
@@ -41,6 +42,7 @@ import { DummyPage1Component } from './pages/dummy/dummy-page1/dummy-page1.compo
 import { DummyPage2Component } from './pages/dummy/dummy-page2/dummy-page2.component';
 import { DummyPage3Component } from './pages/dummy/dummy-page3/dummy-page3.component';
 import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.compo
     DummyPage2Component,
     DummyPage3Component,
     DummyPage4Component,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,8 @@ import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.compo
     MatTabsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule
   ],
   providers: [
     DummyDataService,
