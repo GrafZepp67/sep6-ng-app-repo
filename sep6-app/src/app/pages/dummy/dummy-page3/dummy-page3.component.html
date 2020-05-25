@@ -1,1 +1,14 @@
-<p>dummy-page3 works!</p>
+<mat-card>
+    <mat-card-content>
+        <div class="section-container">
+            <h3>Show dummy data in a simple Bar Chart</h3>
+            <br>
+            <div *ngIf="showSpinner" class="pgr-spinner">
+                <app-progress-spinner></app-progress-spinner>
+            </div>
+            <div *ngIf="showChart" class="bar-chart-area">
+                <app-bar-chartmulti></app-bar-chartmulti>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

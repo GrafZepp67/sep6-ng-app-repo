@@ -42,7 +42,9 @@ import { DummyPage1Component } from './pages/dummy/dummy-page1/dummy-page1.compo
 import { DummyPage2Component } from './pages/dummy/dummy-page2/dummy-page2.component';
 import { DummyPage3Component } from './pages/dummy/dummy-page3/dummy-page3.component';
 import { DummyPage4Component } from './pages/dummy/dummy-page4/dummy-page4.component';
+import { DummyPage5Component } from './pages/dummy/dummy-page5/dummy-page5.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
+import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
     DummyPage3Component,
     DummyPage4Component,
     BarChartComponent,
+    DummyPage5Component,
+    BarChartmultiComponent,
   ],
   imports: [
     BrowserModule,

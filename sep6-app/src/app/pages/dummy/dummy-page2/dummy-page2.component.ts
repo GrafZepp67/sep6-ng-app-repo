@@ -9,8 +9,8 @@ export class DummyPage2Component implements OnInit {
 
   constructor() { }
 
-  showSpinner = true;
-  showTable = false;
+  showSpinner = false;
+  showChart = true;
 
   ngOnInit(): void {
   }
