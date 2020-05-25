@@ -16,6 +16,9 @@ import { DummyDataService } from './services/dummy-data.service';
 import { FlightsDataService } from './services/flights-data.service';
 import { WeatherDataService } from './services/weather-data.service';
 import { ManufacturerDataService } from './services/manufacturer-data.service';
+import { TabgroupComponent } from './tabgroup/tabgroup.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,15 @@ import { ManufacturerDataService } from './services/manufacturer-data.service';
     SectionFlightsComponent,
     SectionWeatherComponent,
     SectionManufacturersComponent,
+    TabgroupComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DummyDataService,
