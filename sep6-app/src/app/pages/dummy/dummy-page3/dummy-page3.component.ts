@@ -9,6 +9,9 @@ export class DummyPage3Component implements OnInit {
 
   constructor() { }
 
+  showSpinner = true;
+  showTable = false;
+
   ngOnInit(): void {
   }
 
