@@ -10,6 +10,6 @@ export class DummyDataService {
 
     getDummyData()
     {
-        return this._http.get('https://manufacturers-endpoint-cloudrun-do62tzdoqq-ew.a.run.app/getDummyData?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+        return this._http.get('https://manufacturers-endpoint-do62tzdoqq-ew.a.run.app/getDummyData?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
     }
 }
