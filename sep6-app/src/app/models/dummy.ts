@@ -1,6 +1,5 @@
 export interface Dummy
 {
-    id: number;
-    initials: string;
-    age: number;
+    dest: string;
+    n: number;
 }

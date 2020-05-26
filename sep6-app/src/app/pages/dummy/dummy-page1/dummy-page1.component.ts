@@ -34,9 +34,8 @@ export class DummyPage1Component implements OnInit {
     for(let i = 0; i < response.length; i++)
     {
       const ITEM: Dummy = {
-        id: response[i].id,
-        initials: response[i].initials,
-        age: response[i].age
+        dest: response[i].dest,
+        n: response[i].n
       };
       ITEMS.push(ITEM);
     }
