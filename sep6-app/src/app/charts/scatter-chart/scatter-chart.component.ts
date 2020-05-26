@@ -93,8 +93,8 @@ export class ScatterChartComponent implements OnInit {
       label: 'EWR',
       pointRadius: 6,
       pointBackgroundColor: 'rgba(255, 255, 255, 0)',
-      pointBorderColor: 'crimson',
-      backgroundColor: 'crimson'
+      pointBorderColor: 'green',
+      backgroundColor: 'green'
     },
     {
       data: DUMMY_SCATTERCHART_DATA2, 
