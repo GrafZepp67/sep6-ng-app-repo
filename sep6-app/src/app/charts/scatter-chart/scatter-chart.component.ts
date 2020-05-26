@@ -26,17 +26,17 @@ const DUMMY_SCATTERCHART_DATA1: any[] = [
 ];
 
 const DUMMY_SCATTERCHART_DATA2: any[] = [
-  {x: 1, y: 28.375},
+  {x: 1, y: 23.475},
   {x: 2, y: 26.312},
-  {x: 3, y: 22.312},
+  {x: 3, y: 26.212},
   {x: 4, y: 27.25},
-  {x: 5, y: 21.45},
-  {x: 6, y: 23.85},
+  {x: 5, y: 22.45},
+  {x: 6, y: 25.65},
   {x: 7, y: 25.65},
   {x: 8, y: 18.35},
-  {x: 9, y: 20.15},
+  {x: 9, y: 20.95},
   {x: 10, y: 28.25},
-  {x: 11, y: 23.375},
+  {x: 11, y: 22.25},
   {x: 12, y: 25.312},
   {x: 13, y: 26.312},
   {x: 14, y: 24.25},
@@ -91,7 +91,7 @@ export class ScatterChartComponent implements OnInit {
     {
       data: DUMMY_SCATTERCHART_DATA1, 
       label: 'EWR',
-      pointRadius: 5,
+      pointRadius: 6,
       pointBackgroundColor: 'rgba(255, 255, 255, 0)',
       pointBorderColor: 'crimson',
       backgroundColor: 'crimson'
@@ -99,7 +99,7 @@ export class ScatterChartComponent implements OnInit {
     {
       data: DUMMY_SCATTERCHART_DATA2, 
       label: 'JFK',
-      pointRadius: 5,
+      pointRadius: 6,
       pointBackgroundColor: 'rgba(255, 255, 255, 0)',
       pointBorderColor: 'cyan',
       backgroundColor: 'cyan'
@@ -107,7 +107,7 @@ export class ScatterChartComponent implements OnInit {
     {
       data: DUMMY_SCATTERCHART_DATA3, 
       label: 'LGA',
-      pointRadius: 5,
+      pointRadius: 6,
       pointBackgroundColor: 'rgba(255, 255, 255, 0)',
       pointBorderColor: 'yellow',
       backgroundColor: 'yellow'
