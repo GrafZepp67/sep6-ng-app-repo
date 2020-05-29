@@ -14,5 +14,4 @@ export class DummyPage2Component implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

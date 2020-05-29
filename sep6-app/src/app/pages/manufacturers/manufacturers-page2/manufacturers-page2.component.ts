@@ -9,7 +9,7 @@ export class ManufacturersPage2Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
   }
-
 }
