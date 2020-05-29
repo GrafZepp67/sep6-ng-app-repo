@@ -6,12 +6,12 @@ import { SectionWeatherComponent } from '../app/sections/section-weather/section
 import { SectionManufacturersComponent } from '../app/sections/section-manufacturers/section-manufacturers.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/flights', pathMatch: 'full'},
-  //{ path: 'dummy', component: SectionDummyComponent },
+  { path: '', redirectTo: '/dummy', pathMatch: 'full'},
+  { path: 'dummy', component: SectionDummyComponent },
   { path: 'flights', component: SectionFlightsComponent },
   { path: 'weather', component: SectionWeatherComponent },
   { path: 'manufacturers', component: SectionManufacturersComponent },
-  { path: '**', redirectTo: '/flights', pathMatch: 'full'}
+  { path: '**', redirectTo: '/dummy', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -36,8 +36,6 @@ export class ManFunc3BarchartComponent implements OnInit {
 
   loadItemsToBarChart(items: any) 
   {
-    console.log(items);
-
     const DATA_ARRAY: number[] = [];
     const LABEL_ARRAY: string[] = [];
 

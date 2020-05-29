@@ -8,6 +8,7 @@ import { ManufacturerDataService } from '../../../services/manufacturer-data.ser
   styleUrls: ['./man-func1-barchart.component.css']
 })
 export class ManFunc1BarchartComponent implements OnInit {
+  
   constructor(private _manufacturersDataService: ManufacturerDataService) { }
 
   showSpinner = true;
@@ -33,6 +34,22 @@ export class ManFunc1BarchartComponent implements OnInit {
       });
   }
 
+  parseResponse(response: any)
+  {
+    const ITEMS: ManFunc1Model[] = [];
+
+    for(let i = 0; i < response.length; i++)
+    {
+      const ITEM: ManFunc1Model = {        
+        count: response[i].count,
+        manufacturer: response[i].manufacturer
+      };
+      
+      ITEMS.push(ITEM);
+    }
+    return ITEMS;
+  }
+
   loadItemsToBarChart(items: any) 
   {
     console.log(items);
@@ -51,22 +68,5 @@ export class ManFunc1BarchartComponent implements OnInit {
 
     this.barChartData = [{data: DATA_ARRAY, label: 'Number of Planes'}];
     this.barChartLabels = LABEL_ARRAY;
-  }
-
-  parseResponse(response: any)
-  {
-    const ITEMS: ManFunc1Model[] = [];
-
-    for(let i = 0; i < response.length; i++)
-    {
-      const ITEM: ManFunc1Model = {        
-        count: response[i].count,
-        manufacturer: response[i].manufacturer
-      };
-      
-      ITEMS.push(ITEM);
-    }
-
-    return ITEMS;
-  }
+  }  
 }

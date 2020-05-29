@@ -114,8 +114,6 @@ export class ScatterChartComponent implements OnInit {
     },
   ];
 
-  public scatterChartLabels: Label[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
-
   ngOnInit(): void {
   }
 

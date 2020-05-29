@@ -9,4 +9,27 @@ export class WeatherDataService {
     }
 
     //Function list here
+    //How many weather observations there are for the origins in a table? - Barchart
+    getNumberOfObservationsForTheOrigins()
+    {
+        return this._http.get('https://weather-endpoint-do62tzdoqq-ew.a.run.app/weather_func1?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+    }
+
+    //For each of the three origins, all temperatures attributes in degree Celsius (need to be able to convert from Fahrenheit to Celsius) - Scatter chart 
+    getAllTempAttributesInCelcius()
+    {
+        return this._http.get('https://weather-endpoint-do62tzdoqq-ew.a.run.app/weather_func2?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+    }
+
+    //The temperature (in Celsius) at JFK - Scatter chart 
+    getTempInJFKinCelcius()
+    {
+        return this._http.get('https://weather-endpoint-do62tzdoqq-ew.a.run.app/weather_func3?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+    }
+
+    //The daily mean temperature (in Celsius) for each origin in the same plot - Scatter chart 
+    getDailyMeanTempForEachOrigin()
+    {
+        return this._http.get('https://weather-endpoint-do62tzdoqq-ew.a.run.app/weather_func4?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+    }
 }

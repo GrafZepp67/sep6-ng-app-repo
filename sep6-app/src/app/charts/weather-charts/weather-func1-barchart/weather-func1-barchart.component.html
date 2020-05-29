@@ -1,0 +1,9 @@
+<div *ngIf="showSpinner" class="pgr-spinner">
+    <app-progress-spinner></app-progress-spinner>
+</div>
+<div *ngIf="showChart" class="bar-chart-area">
+    <div class="chart">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+        </canvas>
+    </div>
+</div>

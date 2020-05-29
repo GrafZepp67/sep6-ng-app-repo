@@ -29,7 +29,6 @@ import { WeatherPage1Component } from './pages/weather/weather-page1/weather-pag
 import { WeatherPage2Component } from './pages/weather/weather-page2/weather-page2.component';
 import { WeatherPage3Component } from './pages/weather/weather-page3/weather-page3.component';
 import { WeatherPage4Component } from './pages/weather/weather-page4/weather-page4.component';
-import { WeatherPage5Component } from './pages/weather/weather-page5/weather-page5.component';
 import { ManufacturersTabgroupComponent } from './tabgroups/manufacturers-tabgroup/manufacturers-tabgroup.component';
 import { ManufacturersPage1Component } from './pages/manufacturers/manufacturers-page1/manufacturers-page1.component';
 import { ManufacturersPage2Component } from './pages/manufacturers/manufacturers-page2/manufacturers-page2.component';
@@ -48,6 +47,10 @@ import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.comp
 import { ManFunc1BarchartComponent } from './charts/manufacturer-charts/man-func1-barchart/man-func1-barchart.component';
 import { ManFunc2BarchartComponent } from './charts/manufacturer-charts/man-func2-barchart/man-func2-barchart.component';
 import { ManFunc3BarchartComponent } from './charts/manufacturer-charts/man-func3-barchart/man-func3-barchart.component';
+import { WeatherFunc1BarchartComponent } from './charts/weather-charts/weather-func1-barchart/weather-func1-barchart.component';
+import { WeatherFunc2ScatterchartComponent } from './charts/weather-charts/weather-func2-scatterchart/weather-func2-scatterchart.component';
+import { WeatherFunc3ScatterchartComponent } from './charts/weather-charts/weather-func3-scatterchart/weather-func3-scatterchart.component';
+import { WeatherFunc4ScatterchartComponent } from './charts/weather-charts/weather-func4-scatterchart/weather-func4-scatterchart.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,6 @@ import { ManFunc3BarchartComponent } from './charts/manufacturer-charts/man-func
     WeatherPage2Component,
     WeatherPage3Component,
     WeatherPage4Component,
-    WeatherPage5Component,
     ManufacturersTabgroupComponent,
     ManufacturersPage1Component,
     ManufacturersPage2Component,
@@ -86,7 +88,11 @@ import { ManFunc3BarchartComponent } from './charts/manufacturer-charts/man-func
     ScatterChartComponent,
     ManFunc1BarchartComponent,
     ManFunc2BarchartComponent,
-    ManFunc3BarchartComponent,    
+    ManFunc3BarchartComponent,
+    WeatherFunc1BarchartComponent, 
+    WeatherFunc2ScatterchartComponent, 
+    WeatherFunc3ScatterchartComponent, 
+    WeatherFunc4ScatterchartComponent, 
   ],
   imports: [
     BrowserModule,

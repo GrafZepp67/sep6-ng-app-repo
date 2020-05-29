@@ -27,6 +27,8 @@ export class ManFunc2BarchartComponent implements OnInit {
     this._manufacturersDataService.getNumFlightsForTopManufacturers()
     .subscribe(response =>
       {
+        console.log("Manufacturer func 2 called!")
+
         this.items = this.parseResponse(response);
         this.loadItemsToBarChart(this.items);
         this.showSpinner = false;
@@ -36,8 +38,6 @@ export class ManFunc2BarchartComponent implements OnInit {
 
   loadItemsToBarChart(items: any) 
   {
-    console.log(items);
-
     const DATA_ARRAY: number[] = [];
     const LABEL_ARRAY: string[] = [];
 
