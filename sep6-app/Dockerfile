@@ -1,8 +1,8 @@
 FROM node:12-slim
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install --save @angular/core@^7.2.0
-RUN npm install --save @angular/common@^7.2.0
+RUN npm install --save @angular/core
+RUN npm install --save @angular/common
 RUN npm install -g @angular/cli
 RUN npm install --save bootstrap@4.0.0-beta jquery
 RUN npm install --save @angular/cdk @angular/material
