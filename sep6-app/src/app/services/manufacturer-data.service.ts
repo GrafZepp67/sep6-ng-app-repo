@@ -4,9 +4,7 @@ import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class ManufacturerDataService {
 
-    constructor(private _http: HttpClient) {
-
-    }
+    constructor(private _http: HttpClient) {}
 
     //Function list here:
 
