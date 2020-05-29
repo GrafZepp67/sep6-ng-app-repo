@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManBarchart1Component } from './man-barchart1.component';
+import { ManFunc1BarchartComponent } from './man-func1-barchart.component';
 
-describe('ManBarchart1Component', () => {
-  let component: ManBarchart1Component;
-  let fixture: ComponentFixture<ManBarchart1Component>;
+describe('ManFunc1BarchartComponent', () => {
+  let component: ManFunc1BarchartComponent;
+  let fixture: ComponentFixture<ManFunc1BarchartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManBarchart1Component ]
+      declarations: [ ManFunc1BarchartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ManBarchart1Component);
+    fixture = TestBed.createComponent(ManFunc1BarchartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

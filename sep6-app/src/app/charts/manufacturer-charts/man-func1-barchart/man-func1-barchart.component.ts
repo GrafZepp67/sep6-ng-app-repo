@@ -3,12 +3,11 @@ import { ManFunc1Model } from '../../..//models/manufacturers/man_func1_model';
 import { ManufacturerDataService } from '../../../services/manufacturer-data.service';
 
 @Component({
-  selector: 'app-man-barchart1',
-  templateUrl: './man-barchart1.component.html',
-  styleUrls: ['./man-barchart1.component.css']
+  selector: 'app-man-func1-barchart',
+  templateUrl: './man-func1-barchart.component.html',
+  styleUrls: ['./man-func1-barchart.component.css']
 })
-export class ManBarchart1Component implements OnInit {
-
+export class ManFunc1BarchartComponent implements OnInit {
   constructor(private _manufacturersDataService: ManufacturerDataService) { }
 
   showSpinner = true;

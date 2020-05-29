@@ -45,7 +45,7 @@ import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
 import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartstacked.component';
 import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.component';
-import { ManBarchart1Component } from './charts/manufacturer-charts/man-barchart1/man-barchart1.component';
+import { ManFunc1BarchartComponent } from './charts/manufacturer-charts/man-func1-barchart/man-func1-barchart.component';
 import { ManFunc2BarchartComponent } from './charts/manufacturer-charts/man-func2-barchart/man-func2-barchart.component';
 import { ManFunc3BarchartComponent } from './charts/manufacturer-charts/man-func3-barchart/man-func3-barchart.component';
 
@@ -84,9 +84,9 @@ import { ManFunc3BarchartComponent } from './charts/manufacturer-charts/man-func
     BarChartmultiComponent,
     BarChartstackedComponent,
     ScatterChartComponent,
-    ManBarchart1Component,
+    ManFunc1BarchartComponent,
     ManFunc2BarchartComponent,
-    ManFunc3BarchartComponent,
+    ManFunc3BarchartComponent,    
   ],
   imports: [
     BrowserModule,
