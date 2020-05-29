@@ -50,7 +50,7 @@ export class ManFunc2BarchartComponent implements OnInit {
       LABEL_ARRAY.push(LABEL);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Number of Flights!'}];
+    this.barChartData = [{data: DATA_ARRAY, label: 'Number of Flights'}];
     this.barChartLabels = LABEL_ARRAY;
   }
 
