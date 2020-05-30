@@ -62,8 +62,6 @@ export class WeatherPage4Component {
   {
     if(!this.isInitialized)
     {
-      console.log("Getting data from w_page 1")
-
       this.getData();
       this.isInitialized = true;
     }   

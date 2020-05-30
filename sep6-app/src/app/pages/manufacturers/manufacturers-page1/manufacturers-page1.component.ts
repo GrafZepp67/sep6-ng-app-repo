@@ -11,6 +11,8 @@ export class ManufacturersPage1Component {
 
   constructor(private _manufacturersDataService: ManufacturerDataService) { }
 
+  public isInitialized: boolean = false;
+
   showSpinner = true;
   showChart = false;
 
@@ -21,6 +23,15 @@ export class ManufacturersPage1Component {
   public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
   
   public items: ManFunc1Model[] = [];
+
+  initComponent()
+  {
+    if(!this.isInitialized)
+    {
+      this.getData();
+      this.isInitialized = true;
+    }   
+  }
 
   getData()
   {

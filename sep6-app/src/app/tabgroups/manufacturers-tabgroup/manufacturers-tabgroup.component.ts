@@ -51,15 +51,15 @@ export class ManufacturersTabgroupComponent implements AfterViewInit {
       switch(index)
       {
         case 0:
-            this.manPage1.getData();
+          this.manPage1.initComponent();
           break;
 
         case 1:
-            this.manPage2.getData();
+          this.manPage2.initComponent();
           break;
 
         case 2:
-            this.manPage3.getData();
+          this.manPage3.initComponent();
           break;
       }      
   }  

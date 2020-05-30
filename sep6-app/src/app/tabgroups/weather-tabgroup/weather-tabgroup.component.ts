@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { Subject } from 'rxjs';
 
@@ -12,13 +12,9 @@ import { WeatherPage4Component } from '../../pages/weather/weather-page4/weather
   templateUrl: './weather-tabgroup.component.html',
   styleUrls: ['./weather-tabgroup.component.css']
 })
-export class WeatherTabgroupComponent implements OnInit, AfterViewInit {
+export class WeatherTabgroupComponent implements AfterViewInit {
 
   constructor() { }
-
-  ngOnInit()
-  {
-  }
 
   public activeTab: any;
 
