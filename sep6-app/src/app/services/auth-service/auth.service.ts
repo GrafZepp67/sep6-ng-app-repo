@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { User } from "../auth-service/user";
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -33,11 +33,13 @@ export class AuthService {
   }
 
   // Log in with email/password
-  async Login(email: string, password: string) {
+  Login(email: string, password: string) {
     try {
-      const result = await this.afAuth.signInWithEmailAndPassword(email, password);
-      this.ngZone.run(() => {
-        this.router.navigate(['home']);
+      const result = this.afAuth.signInWithEmailAndPassword(email, password);
+      this.ngZone.run(() => {        
+        console.log("User logged in!")
+        this.router.navigate(['/home']);
+        console.log("Route changed!")
       });
     }
     catch (error) {
@@ -47,14 +49,15 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('user'));    
     return (user !== null) ? true : false;
   }
 
   // Log out 
-  async Logout() {
-    await this.afAuth.signOut();
+  Logout() {
+    this.afAuth.signOut();
+    console.log("User logged out!")
     localStorage.removeItem('user');
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 }
