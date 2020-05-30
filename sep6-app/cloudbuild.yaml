@@ -9,6 +9,3 @@ steps:
 
 images:
     - 'gcr.io/$PROJECT_ID/sep6-ng-app-image:latest'
-
-
-
