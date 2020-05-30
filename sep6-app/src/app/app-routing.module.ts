@@ -6,14 +6,15 @@ import { SectionManufacturersComponent } from '../app/sections/section-manufactu
 import { SectionLoginComponent } from './sections/section-login/section-login.component';
 import { SectionHomeComponent } from './sections/section-home/section-home.component';
 import { AuthGuard } from "./services/auth-service/guard/auth.guard";
+import { SecureInnerPagesGuard } from "./services/auth-service/guard/secure-inner-pages.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
-  { path: 'login', component: SectionLoginComponent },
+  { path: 'login', component: SectionLoginComponent, canActivate: [ SecureInnerPagesGuard ] },
   { path: 'home', component: SectionHomeComponent, canActivate: [AuthGuard] },
-  { path: 'flights', component: SectionFlightsComponent },
-  { path: 'weather', component: SectionWeatherComponent },
-  { path: 'manufacturers', component: SectionManufacturersComponent },
+  { path: 'flights', component: SectionFlightsComponent, canActivate: [AuthGuard] },
+  { path: 'weather', component: SectionWeatherComponent, canActivate: [AuthGuard] },
+  { path: 'manufacturers', component: SectionManufacturersComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
@@ -22,3 +23,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+//canActivate: [ SecureInnerPagesGuard ]
