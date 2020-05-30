@@ -1,13 +1,13 @@
 steps:
-#build stage
+#Step 1: build docker container
     - name: 'gcr.io/cloud-builders/docker'
       args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/sep6-ng-app-image', 'sep6-app/' ]
 
-#push he container image to Container Registry:
+#Step 2: push the container image to Container Registry
     - name: 'gcr.io/cloud-builders/docker'
       args: ['push', 'gcr.io/$PROJECT_ID/sep6-ng-app-image']
 
-#deploy stage:
+#Step 3: deploy container to Cloud Run:
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['run', 'deploy', 'ng-app-docker', '--image', 'gcr.io/$PROJECT_ID/sep6-ng-app-image:latest', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
 
