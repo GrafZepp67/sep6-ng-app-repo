@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ManFunc1Model } from '../../..//models/manufacturers/man_func1_model';
 import { ManufacturerDataService } from '../../../services/manufacturer-data.service';
 
@@ -7,7 +7,7 @@ import { ManufacturerDataService } from '../../../services/manufacturer-data.ser
   templateUrl: './manufacturers-page1.component.html',
   styleUrls: ['./manufacturers-page1.component.css']
 })
-export class ManufacturersPage1Component implements OnInit {
+export class ManufacturersPage1Component {
 
   constructor(private _manufacturersDataService: ManufacturerDataService) { }
 
@@ -22,8 +22,11 @@ export class ManufacturersPage1Component implements OnInit {
   
   public items: ManFunc1Model[] = [];
 
-  ngOnInit(): void 
+  getData()
   {
+    this.showChart = false;   
+    this.showSpinner = true;
+
     this._manufacturersDataService.getManufacturersWithMoreThan200Planes()
     .subscribe(response =>
       {
@@ -67,9 +70,4 @@ export class ManufacturersPage1Component implements OnInit {
     this.barChartData = [{data: DATA_ARRAY, label: 'Number of Planes'}];
     this.barChartLabels = LABEL_ARRAY;
   }  
-
-  testChildFunc()
-  {
-    console.log("Hello from manufacturer page 1!")
-  }
 }

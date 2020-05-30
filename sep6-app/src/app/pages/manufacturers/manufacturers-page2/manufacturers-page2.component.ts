@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ManFunc2Model } from '../../../models/manufacturers/man_func2_model';
 import { ManufacturerDataService } from '../../../services/manufacturer-data.service';
 
@@ -7,7 +7,7 @@ import { ManufacturerDataService } from '../../../services/manufacturer-data.ser
   templateUrl: './manufacturers-page2.component.html',
   styleUrls: ['./manufacturers-page2.component.css']
 })
-export class ManufacturersPage2Component implements OnInit {
+export class ManufacturersPage2Component {
 
   constructor(private _manufacturersDataService: ManufacturerDataService) { }
 
@@ -22,8 +22,11 @@ export class ManufacturersPage2Component implements OnInit {
 
   public items: ManFunc2Model[] = [];
 
-  ngOnInit(): void 
+  getData()
   {
+    this.showChart = false;
+    this.showSpinner = true;
+
     this._manufacturersDataService.getNumFlightsForTopManufacturers()
     .subscribe(response =>
       {
@@ -32,24 +35,6 @@ export class ManufacturersPage2Component implements OnInit {
         this.showSpinner = false;
         this.showChart = true;
       });
-  }
-
-  loadItemsToBarChart(items: any) 
-  {
-    const DATA_ARRAY: number[] = [];
-    const LABEL_ARRAY: string[] = [];
-
-    for(let i = 0; i < items.length; i++)
-    {
-      const DATA: number = items[i].num_flights;
-      const LABEL: string = items[i].manufacturer;
-
-      DATA_ARRAY.push(DATA);
-      LABEL_ARRAY.push(LABEL);
-    }
-
-    this.barChartData = [{data: DATA_ARRAY, label: 'Number of Flights'}];
-    this.barChartLabels = LABEL_ARRAY;
   }
 
   parseResponse(response: any)
@@ -69,8 +54,21 @@ export class ManufacturersPage2Component implements OnInit {
     return ITEMS;
   }
 
-  testChildFunc()
+  loadItemsToBarChart(items: any) 
   {
-    console.log("Hello from manufacturer page 2!")
+    const DATA_ARRAY: number[] = [];
+    const LABEL_ARRAY: string[] = [];
+
+    for(let i = 0; i < items.length; i++)
+    {
+      const DATA: number = items[i].num_flights;
+      const LABEL: string = items[i].manufacturer;
+
+      DATA_ARRAY.push(DATA);
+      LABEL_ARRAY.push(LABEL);
+    }
+
+    this.barChartData = [{data: DATA_ARRAY, label: 'Number of Flights'}];
+    this.barChartLabels = LABEL_ARRAY;
   }
 }

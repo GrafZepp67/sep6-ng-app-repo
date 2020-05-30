@@ -2,7 +2,6 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { Subject } from 'rxjs';
 
-
 import { ManufacturersPage1Component } from '../../pages/manufacturers/manufacturers-page1/manufacturers-page1.component';
 import { ManufacturersPage2Component } from '../../pages/manufacturers/manufacturers-page2/manufacturers-page2.component';
 import { ManufacturersPage3Component } from '../../pages/manufacturers/manufacturers-page3/manufacturers-page3.component';
@@ -31,6 +30,8 @@ export class ManufacturersTabgroupComponent implements AfterViewInit {
   {
     this.activeTab = data;
     console.log('Observed index:', this.activeTab);
+
+    this.loadManPageChart(this.activeTab);
   });
 
   public updateTabSubject(newActiveTab: any) 
@@ -44,6 +45,24 @@ export class ManufacturersTabgroupComponent implements AfterViewInit {
     this.activeTab = this.tabGroup.selectedIndex;
     this.updateTabSubject(this.activeTab);
   }
+
+  loadManPageChart(index : any)
+  {
+      switch(index)
+      {
+        case 0:
+            this.manPage1.getData();
+          break;
+
+        case 1:
+            this.manPage2.getData();
+          break;
+
+        case 2:
+            this.manPage3.getData();
+          break;
+      }      
+  }  
 
   ngAfterViewInit() 
   {    
