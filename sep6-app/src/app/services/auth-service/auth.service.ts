@@ -38,6 +38,7 @@ export class AuthService {
       const result = this.afAuth.signInWithEmailAndPassword(email, password);
       this.ngZone.run(() => {        
         console.log("User logged in!")
+        localStorage.setItem('user', JSON.stringify(this.userData));
         this.router.navigate(['/home']);
         console.log("Route changed!")
       });
