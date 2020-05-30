@@ -58,11 +58,8 @@ export class WeatherFunc4ScatterchartComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.getData();
-  }
+    console.log("Weather func4 component initialized!")
 
-  getData()
-  {
     this._weatherDataService.getDailyMeanTempForEachOrigin()
     .subscribe(response =>
       {

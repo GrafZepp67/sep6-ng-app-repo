@@ -24,6 +24,8 @@ export class WeatherFunc1BarchartComponent implements OnInit {
 
   ngOnInit() 
   {   
+    console.log("Weather func1 component initialized!")
+
     this._weatherDataService.getNumberOfObservationsForTheOrigins()
     .subscribe(response =>
       {

@@ -58,11 +58,8 @@ export class WeatherFunc2ScatterchartComponent implements OnInit {
 
   ngOnInit()
   {
-    this.getData();
-  }
+    console.log("Weather func2 component initialized!")
 
-  getData()
-  {
     this._weatherDataService.getAllTempAttributesInCelcius()
     .subscribe(response =>
       {
