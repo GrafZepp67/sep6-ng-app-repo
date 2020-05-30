@@ -3,7 +3,7 @@ import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
 
 import { WeatherFunc3Model } from '../../..//models/weather/weather_func3_model';
 import { ScatterChartPoint } from '../../..//models/scatter_chart_point';
-import { WeatherDataService } from '../../../services/weather-data.service';
+import { WeatherDataService } from '../../../services/data-service/weather-data.service';
 
 const INIT_SCATTERCHART_DATA: any[] = [{x: 0, y: 0}];
 

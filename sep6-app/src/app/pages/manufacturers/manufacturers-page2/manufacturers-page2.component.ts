@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ManFunc2Model } from '../../../models/manufacturers/man_func2_model';
-import { ManufacturerDataService } from '../../../services/manufacturer-data.service';
+import { ManufacturerDataService } from '../../../services/data-service/manufacturer-data.service';
 
 @Component({
   selector: 'app-manufacturers-page2',

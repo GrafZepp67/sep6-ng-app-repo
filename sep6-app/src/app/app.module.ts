@@ -7,6 +7,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { ChartsModule } from 'ng2-charts';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { AuthService } from '../app/services/auth-service/auth.service'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,10 +21,10 @@ import { SectionDummyComponent } from './sections/section-dummy/section-dummy.co
 import { SectionFlightsComponent } from './sections/section-flights/section-flights.component';
 import { SectionWeatherComponent } from './sections/section-weather/section-weather.component';
 import { SectionManufacturersComponent } from './sections/section-manufacturers/section-manufacturers.component';
-import { DummyDataService } from './services/dummy-data.service';
-import { FlightsDataService } from './services/flights-data.service';
-import { WeatherDataService } from './services/weather-data.service';
-import { ManufacturerDataService } from './services/manufacturer-data.service';
+import { DummyDataService } from './services/data-service/dummy-data.service';
+import { FlightsDataService } from './services/data-service/flights-data.service';
+import { WeatherDataService } from './services/data-service/weather-data.service';
+import { ManufacturerDataService } from './services/data-service/manufacturer-data.service';
 import { FlightsTabgroupComponent } from './tabgroups/flights-tabgroup/flights-tabgroup.component';
 import { FlightsPage1Component } from './pages/flights/flights-page1/flights-page1.component';
 import { FlightsPage2Component } from './pages/flights/flights-page2/flights-page2.component';
@@ -44,6 +50,8 @@ import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
 import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartstacked.component';
 import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.component';
+import { SectionLoginComponent } from './sections/section-login/section-login.component';
+import { SectionHomeComponent } from './sections/section-home/section-home.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +87,8 @@ import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.comp
     BarChartmultiComponent,
     BarChartstackedComponent,
     ScatterChartComponent,
+    SectionLoginComponent,
+    SectionHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,7 +98,10 @@ import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.comp
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [
     DummyDataService,
@@ -96,6 +109,7 @@ import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.comp
     WeatherDataService,
     ManufacturerDataService,
     HttpClientModule,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

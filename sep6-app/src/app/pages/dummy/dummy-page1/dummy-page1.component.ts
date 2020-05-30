@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dummy } from '../../../models/dummy';
-import { DummyDataService } from '../../../services/dummy-data.service';
+import { DummyDataService } from '../../../services/data-service/dummy-data.service';
 
 @Component({
   selector: 'app-dummy-page1',

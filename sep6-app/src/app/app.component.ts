@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DummyDataService } from './services/dummy-data.service';
+import { DummyDataService } from './services/data-service/dummy-data.service';
 
 @Component({
   selector: 'app-root',
