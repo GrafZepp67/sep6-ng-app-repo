@@ -25,7 +25,11 @@ export class WeatherPage3Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    animation: 
+    {
+      duration: 0
+    }
   };
 
   //Initialize empty scatter chart

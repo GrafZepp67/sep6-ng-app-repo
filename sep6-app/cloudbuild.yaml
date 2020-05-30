@@ -6,6 +6,6 @@ steps:
 
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['run', 'deploy', 'ng-app-docker', '--image', 'gcr.io/$PROJECT_ID/sep6-ng-app-image:latest', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
-
+      timeout: 1200s
 images:
     - 'gcr.io/$PROJECT_ID/sep6-ng-app-image:latest'
