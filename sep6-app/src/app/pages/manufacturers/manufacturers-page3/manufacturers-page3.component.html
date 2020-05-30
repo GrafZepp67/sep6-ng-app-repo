@@ -3,7 +3,15 @@
         <div class="section-container">
             <span>The number of planes of each Airbus Model:</span>
             <br>
-            <app-man-func3-barchart></app-man-func3-barchart>
+            <div *ngIf="showSpinner" class="pgr-spinner">
+                <app-progress-spinner></app-progress-spinner>
+            </div>
+            <div *ngIf="showChart" class="bar-chart-area">
+                <div class="chart">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
         </div>
     </mat-card-content>
 </mat-card>

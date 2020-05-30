@@ -42,4 +42,9 @@ export class DummyPage1Component implements OnInit {
     }
     return ITEMS;
   }
+
+  test()
+  {
+    console.log("Hello!")
+  }
 }

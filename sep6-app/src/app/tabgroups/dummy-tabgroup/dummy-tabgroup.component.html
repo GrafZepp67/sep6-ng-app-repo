@@ -1,5 +1,5 @@
-<mat-tab-group mat-stretch-tabs disableRipple dynamicHeight>
-    <mat-tab label="Table">
+<mat-tab-group #tabGroup mat-stretch-tabs disableRipple dynamicHeight (selectedTabChange)='onTabSelectChange($event)'>
+    <mat-tab #tab1 label="Table">
         <app-dummy-page1></app-dummy-page1>
     </mat-tab>
     <mat-tab label="Bar Chart">

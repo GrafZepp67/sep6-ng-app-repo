@@ -9,5 +9,5 @@ import { DummyDataService } from './services/dummy-data.service';
 })
 export class AppComponent {
   title = 'sep6-app';
-  subtitle = 'MySubtitle';
+  subtitle = 'MySubtitle';  
 }
