@@ -1,4 +1,4 @@
-<mat-tab-group mat-stretch-tabs disableRipple dynamicHeight>
+<mat-tab-group #tabGroup mat-stretch-tabs disableRipple dynamicHeight (selectedTabChange)='onTabSelectChange($event)'>
     <mat-tab label="Requirement 2.1">
         <app-weather-page1></app-weather-page1>
     </mat-tab>

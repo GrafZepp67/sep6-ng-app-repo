@@ -44,10 +44,6 @@ import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
 import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartstacked.component';
 import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.component';
-import { WeatherFunc1BarchartComponent } from './charts/weather-charts/weather-func1-barchart/weather-func1-barchart.component';
-import { WeatherFunc2ScatterchartComponent } from './charts/weather-charts/weather-func2-scatterchart/weather-func2-scatterchart.component';
-import { WeatherFunc3ScatterchartComponent } from './charts/weather-charts/weather-func3-scatterchart/weather-func3-scatterchart.component';
-import { WeatherFunc4ScatterchartComponent } from './charts/weather-charts/weather-func4-scatterchart/weather-func4-scatterchart.component';
 
 @NgModule({
   declarations: [
@@ -83,10 +79,6 @@ import { WeatherFunc4ScatterchartComponent } from './charts/weather-charts/weath
     BarChartmultiComponent,
     BarChartstackedComponent,
     ScatterChartComponent,
-    WeatherFunc1BarchartComponent, 
-    WeatherFunc2ScatterchartComponent, 
-    WeatherFunc3ScatterchartComponent, 
-    WeatherFunc4ScatterchartComponent, 
   ],
   imports: [
     BrowserModule,

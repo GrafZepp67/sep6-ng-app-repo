@@ -3,7 +3,13 @@
         <div class="section-container">
             <span>The daily mean temperature (in Celsius) for each origin in the same plot</span>
             <br>
-            <app-weather-func4-scatterchart></app-weather-func4-scatterchart>
+            <div *ngIf="showSpinner" class="pgr-spinner">
+                <app-progress-spinner></app-progress-spinner>
+            </div>
+            <div *ngIf="showChart" class="chart">
+                <canvas baseChart [datasets]="scatterChartData" [options]="scatterChartOptions" [chartType]="scatterChartType">
+                </canvas>
+            </div>
         </div>
     </mat-card-content>
 </mat-card>

@@ -31,7 +31,7 @@ export class ManufacturersTabgroupComponent implements AfterViewInit {
     this.activeTab = data;
     console.log('Observed index:', this.activeTab);
 
-    this.loadManPageChart(this.activeTab);
+    this.loadChildPageChart(this.activeTab);
   });
 
   public updateTabSubject(newActiveTab: any) 
@@ -46,7 +46,7 @@ export class ManufacturersTabgroupComponent implements AfterViewInit {
     this.updateTabSubject(this.activeTab);
   }
 
-  loadManPageChart(index : any)
+  loadChildPageChart(index : any)
   {
       switch(index)
       {
