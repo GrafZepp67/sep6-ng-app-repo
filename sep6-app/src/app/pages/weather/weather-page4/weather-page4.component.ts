@@ -7,6 +7,10 @@ import { ScatterChartPoint } from '../../..//models/scatter_chart_point';
 
 const INIT_SCATTERCHART_DATA: any[] = [{x: 0, y: 0}];
 
+const JFK_DATASET: ScatterChartPoint[] = []
+const EWR_DATASET: ScatterChartPoint[] = []
+const LGA_DATASET: ScatterChartPoint[] = []
+
 @Component({
   selector: 'app-weather-page4',
   templateUrl: './weather-page4.component.html',
@@ -25,11 +29,7 @@ export class WeatherPage4Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
-    animation: 
-    {
-      duration: 0
-    }
+    maintainAspectRatio: false
   };
 
   //Initialize empty scatter chart
@@ -77,7 +77,8 @@ export class WeatherPage4Component {
     .subscribe(response =>
       {
         this.items = this.parseResponse(response);
-        this.loadItemsToScatterChart(this.items);
+        this.loadItemsToScatterChartDatasets(this.items);
+        this.loadChartWithData();
         this.showSpinner = false;
         this.showChart = true;
       });
@@ -101,12 +102,8 @@ export class WeatherPage4Component {
     return ITEMS;
   }
 
-  loadItemsToScatterChart(items: any) 
+  loadItemsToScatterChartDatasets(items: any) 
   {
-    const JFK_DATASET: ScatterChartPoint[] = []
-    const EWR_DATASET: ScatterChartPoint[] = []
-    const LGA_DATASET: ScatterChartPoint[] = []
-
     for(let i = 0; i < items.length; i++)
     {
       const DATA_POINT_JFK: ScatterChartPoint ={
@@ -126,8 +123,11 @@ export class WeatherPage4Component {
         y: items[i].lga_temp
       };
       LGA_DATASET.push(DATA_POINT_LGA);
-    }
+    }    
+  }
 
+  loadChartWithData()
+  {
     this.scatterChartData = [
       {
         data: JFK_DATASET, //JFK x = epoch, y = temp

@@ -31,8 +31,6 @@ export class WeatherTabgroupComponent implements AfterViewInit {
   public subscription = this.indexSubject$.subscribe((data: any) => 
   {
     this.activeTab = data;
-    console.log('Observed index:', this.activeTab);
-
     this.loadChildPageChart(this.activeTab);
   });
 

@@ -7,6 +7,8 @@ import { WeatherDataService } from '../../../services/weather-data.service';
 
 const INIT_SCATTERCHART_DATA: any[] = [{x: 0, y: 0}];
 
+const JFK_DATASET: ScatterChartPoint[] = []
+
 @Component({
   selector: 'app-weather-page3',
   templateUrl: './weather-page3.component.html',
@@ -26,7 +28,7 @@ export class WeatherPage3Component {
   public scatterChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    animation: 
+    animation:
     {
       duration: 0
     }
@@ -77,7 +79,8 @@ export class WeatherPage3Component {
     .subscribe(response =>
       {
         this.items = this.parseResponse(response);
-        this.loadItemsToScatterChart(this.items);
+        this.loadItemsToScatterChartDatasets(this.items);
+        this.loadChartWithData();
         this.showSpinner = false;
         this.showChart = true;
       });
@@ -99,10 +102,8 @@ export class WeatherPage3Component {
     return ITEMS;
   }
 
-  loadItemsToScatterChart(items: any) 
+  loadItemsToScatterChartDatasets(items: any) 
   {
-    const JFK_DATASET: ScatterChartPoint[] = []
-
     for(let i = 0; i < items.length; i++)
     {
       const DATA_POINT: ScatterChartPoint ={
@@ -111,8 +112,11 @@ export class WeatherPage3Component {
       };
 
       JFK_DATASET.push(DATA_POINT);
-    }
+    }    
+  }
 
+  loadChartWithData()
+  {
     this.scatterChartData = [
       {
         data: JFK_DATASET, //JFK x = epoch, y = temp
