@@ -16,7 +16,7 @@ export class ManufacturersTabgroupComponent implements AfterViewInit, OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("ManTabgroup initialized!");
+    
   }
 
   public activeTab: any;

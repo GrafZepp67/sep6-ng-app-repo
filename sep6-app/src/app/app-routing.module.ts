@@ -7,8 +7,10 @@ import { SecureInnerPagesGuard } from "./services/auth-service/guard/secure-inne
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'login', component: SectionLoginComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'dashboard', component: SectionHomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: SectionLoginComponent },
+  //{ path: 'login', component: SectionLoginComponent, canActivate: [SecureInnerPagesGuard] },
+  { path: 'dashboard', component: SectionHomeComponent },
+  //{ path: 'dashboard', component: SectionHomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 

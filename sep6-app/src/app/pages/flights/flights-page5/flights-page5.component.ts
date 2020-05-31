@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FlightsFunc2Model } from '../../..//models/flights/flights_func2_model';
+import { Component } from '@angular/core';
+import { FlightsFunc5Model } from '../../..//models/flights/flights_func5_model';
 import { FlightsDataService } from '../../../services/data-service/flights-data.service';
 
 @Component({
-  selector: 'app-flights-page2',
-  templateUrl: './flights-page2.component.html',
-  styleUrls: ['./flights-page2.component.css']
+  selector: 'app-flights-page5',
+  templateUrl: './flights-page5.component.html',
+  styleUrls: ['./flights-page5.component.css']
 })
-export class FlightsPage2Component {
+export class FlightsPage5Component {
 
   constructor(private dataService: FlightsDataService) { }
 
@@ -22,7 +22,7 @@ export class FlightsPage2Component {
   public barChartLegend = true;
   public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
   
-  public items: FlightsFunc2Model[] = [];
+  public items: FlightsFunc5Model[] = [];
 
   initComponent()
   {
@@ -53,15 +53,14 @@ export class FlightsPage2Component {
 
   parseResponse(response: any)
   {
-    const ITEMS: FlightsFunc2Model[] = [];
+    const ITEMS: FlightsFunc5Model[] = [];
 
     for(let i = 0; i < response.length; i++)
     {
-      const ITEM: FlightsFunc2Model = {        
-        month: response[i].month,
+      const ITEM: FlightsFunc5Model = {        
         origin: response[i].origin,
-        flights: response[i].flights,
-        percentage: response[i].percentage,
+        meanDepartureTime: response[i].meanDepartureTime,
+        meanArrivalTime: response[i].meanArrivalTime        
       };
       
       ITEMS.push(ITEM);

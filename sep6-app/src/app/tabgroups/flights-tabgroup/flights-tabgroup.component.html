@@ -1,4 +1,4 @@
-<mat-tab-group mat-stretch-tabs disableRipple dynamicHeight>
+<mat-tab-group #tabGroup mat-stretch-tabs disableRipple dynamicHeight (selectedTabChange)='onTabSelectChange($event)'>
     <mat-tab label="Requirement 1.1">
         <app-flights-page1></app-flights-page1>
     </mat-tab>
@@ -10,5 +10,8 @@
     </mat-tab>
     <mat-tab label="Requirement 1.4">
         <app-flights-page4></app-flights-page4>
+    </mat-tab>
+    <mat-tab label="Requirement 1.5">
+        <app-flights-page5></app-flights-page5>
     </mat-tab>
 </mat-tab-group>
