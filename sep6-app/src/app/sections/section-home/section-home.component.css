@@ -100,3 +100,11 @@
 #dashboard-content {
     height: 100vh;
 }
+
+.mat-sidenav-container {
+    color: black !important;
+}
+
+.mat-sidenav {
+    color: black !important;
+}

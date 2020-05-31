@@ -6,6 +6,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { ChartsModule } from 'ng2-charts';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule  } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatIconModule } from '@angular/material/icon';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -52,6 +56,10 @@ import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartsta
 import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.component';
 import { SectionLoginComponent } from './sections/section-login/section-login.component';
 import { SectionHomeComponent } from './sections/section-home/section-home.component';
+import { SectionDashboardComponent } from './sections/section-dashboard/section-dashboard.component';
+import { RootNavComponent } from './root-nav/root-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -89,6 +97,8 @@ import { SectionHomeComponent } from './sections/section-home/section-home.compo
     ScatterChartComponent,
     SectionLoginComponent,
     SectionHomeComponent,
+    SectionDashboardComponent,
+    RootNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,6 +112,12 @@ import { SectionHomeComponent } from './sections/section-home/section-home.compo
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    LayoutModule,
+    MatButtonModule
   ],
   providers: [
     DummyDataService,
