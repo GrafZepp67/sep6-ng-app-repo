@@ -40,8 +40,15 @@ export class AuthService {
   async login(email: string, password: string){
     const provider = new firebase.auth.EmailAuthProvider();
     const credential = await this.afAuth.signInWithEmailAndPassword(email, password)
-    this.router.navigate(['/home']);
-    return this.updateUserData(credential.user)
+    .then((credential) => {
+      this.ngZone.run(() => {
+        //this.router.navigate(['dashboard']);
+        this.router.navigate(['/home']);
+      });
+      this.updateUserData(credential.user);
+    }).catch((error) => {
+      window.alert(error.message)
+    })
   }
 
   async logout() {

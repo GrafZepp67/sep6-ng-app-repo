@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth-service/auth.service';
 
 @Component({
   selector: 'app-section-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionHomeComponent implements OnInit {
 
-  constructor() { }
+  public user: any;
 
-  ngOnInit(): void {
+  constructor(public authService: AuthService) { }
+
+  ngOnInit(): void 
+  {
+    this.user = this.authService.getUser();
   }
-
 }

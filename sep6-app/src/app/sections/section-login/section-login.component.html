@@ -1,21 +1,12 @@
-<div class="displayTable">
-    <div class="displayTableCell">
+<form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in:</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" #email required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" #password required>
 
-        <div class="authBlock">
-            <h3>Sign In</h3>
-            <div class="formGroup">
-                <input type="text" class="formControl" placeholder="Email" #email required>
-            </div>
-
-            <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPassword required>
-            </div>
-
-            <!-- Calling SignIn Api from AuthService -->
-            <div class="formGroup">
-                <!--<button type="button" class="btn btn-success" value="Log in" (click)="authService.Login(email.value, userPassword.value)">Login</button> -->
-                <a class="btn btn-primary btn-logoff" title="Log in" (click)="authService.login(email.value, userPassword.value)">Login <i class="fa fa-power-off" aria-hidden="true"></i></a>
-            </div>
-        </div>
+    <div class="formGroup">
+        <button type="button" class="btn btn-primary btn-signin" title="Log in" (click)="authService.login(email.value, password.value)">Login</button>
     </div>
-</div>
+    <p class="mt-5 mb-3 text-muted">&copy; SEP6-2020</p>
+</form>
