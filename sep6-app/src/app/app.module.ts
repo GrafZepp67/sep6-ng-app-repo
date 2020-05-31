@@ -57,7 +57,6 @@ import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.comp
 import { SectionLoginComponent } from './sections/section-login/section-login.component';
 import { SectionHomeComponent } from './sections/section-home/section-home.component';
 import { SectionDashboardComponent } from './sections/section-dashboard/section-dashboard.component';
-import { RootNavComponent } from './root-nav/root-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -98,7 +97,6 @@ import { MatButtonModule } from '@angular/material/button';
     SectionLoginComponent,
     SectionHomeComponent,
     SectionDashboardComponent,
-    RootNavComponent,
   ],
   imports: [
     BrowserModule,

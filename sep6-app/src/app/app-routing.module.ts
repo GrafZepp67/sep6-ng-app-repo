@@ -11,12 +11,10 @@ import { SecureInnerPagesGuard } from "./services/auth-service/guard/secure-inne
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'login', component: SectionLoginComponent },
-  { path: 'home', component: SectionHomeComponent,
-    children: [
-      { path: 'home/flights', component: SectionFlightsComponent},
-      { path: 'weather', component: SectionWeatherComponent},
-      { path: 'manufacturers', component: SectionManufacturersComponent},
-    ] },  
+  { path: 'home', component: SectionHomeComponent },
+  { path: 'flights', component: SectionFlightsComponent },
+  { path: 'weather', component: SectionWeatherComponent },
+  { path: 'manufacturers', component: SectionManufacturersComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
