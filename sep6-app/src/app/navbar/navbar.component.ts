@@ -9,11 +9,13 @@ import { Router } from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(
-    public authService: AuthService
-  ) { }
+  public user: any;
 
-  ngOnInit(): void {
+  constructor(public authService: AuthService) { }
+
+  ngOnInit(): void 
+  {
+    this.user = this.authService.getUser();
   }
 
 }

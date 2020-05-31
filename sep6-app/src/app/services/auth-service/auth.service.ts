@@ -15,9 +15,9 @@ import { switchMap } from 'rxjs/operators';
 export class AuthService {
 
   user$: Observable<User>;
-
-  userData: any; // Save logged in user data
   
+  public user: any;
+
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -59,5 +59,17 @@ export class AuthService {
     } 
 
     return userRef.set(data, { merge: true })
+  }
+
+  getUser()
+  {
+    this.afAuth.authState.subscribe(user => {
+      if(user)
+      {
+        this.user = user;
+      }
+    })
+
+    return this.user;
   }
 }
