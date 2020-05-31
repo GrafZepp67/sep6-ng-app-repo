@@ -1,14 +1,20 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "../auth-service/user";
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import firebase from '@firebase/app';
+import '@firebase/auth';
+
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  user$: Observable<User>;
 
   userData: any; // Save logged in user data
   
@@ -18,20 +24,61 @@ export class AuthService {
     public router: Router,  
     public ngZone: NgZone // NgZone service to remove outside scope warning
   ) {    
-    /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
+    this.user$ = this.afAuth.authState.pipe(
+      switchMap(user => {
+          // Logged in
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          // Logged out
+          return of(null);
+        }
+      })
+    )
   }
 
+  async login(email: string, password: string){
+    const provider = new firebase.auth.EmailAuthProvider();
+    const credential = await this.afAuth.signInWithEmailAndPassword(email, password)
+    this.router.navigate(['/home']);
+    return this.updateUserData(credential.user)
+  }
+
+  async logout() {
+    await this.afAuth.signOut();
+    console.log("Logged out!");
+    this.router.navigate(['/login']);
+  }
+
+  private updateUserData(user : any) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+
+    const data = { 
+      uid: user.uid, 
+      email: user.email
+    } 
+
+    return userRef.set(data, { merge: true })
+  }
+
+  /*async login(email: string, password: string) {
+    try {
+      const result = await this.afAuth.signInWithEmailAndPassword(email, password);
+      this.ngZone.run(() => {        
+        console.log("User logged in!");
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        this.router.navigate(['/home']);
+        console.log(this.router.url);
+      });
+    }
+    catch (error) {
+      window.alert(error.message);
+    }
+  }*/
+
+  
+
+  /*
   // Log in with email/password
   Login(email: string, password: string) {
     try {
@@ -60,5 +107,5 @@ export class AuthService {
     console.log("User logged out!")
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
-  }
+  }*/
 }
