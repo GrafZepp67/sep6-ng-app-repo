@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { Subject } from 'rxjs';
 import { MatListOption } from '@angular/material/list';
-import { SectionDashboardComponent } from '../section-dashboard/section-dashboard.component';
 
 @Component({
   selector: 'app-section-home',
@@ -20,7 +19,6 @@ export class SectionHomeComponent implements OnInit {
   public navOptions: string[] = ['Flights', 'Weather', 'Manufacturers'];
 
   @ViewChild('navopts') navopts: { selectedLink: any; };
-  @ViewChild( SectionDashboardComponent ) dashboard: any;
 
   //Observer area start
   public linkSubject = new Subject<any>();
