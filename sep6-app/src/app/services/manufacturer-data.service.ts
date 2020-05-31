@@ -11,18 +11,18 @@ export class ManufacturerDataService {
     //The manufacturers that have more than 200 planes
     getManufacturersWithMoreThan200Planes()
     {
-        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func1?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func1');
     }
 
     //The number of flights each manufacturer with more than 200 planes are responsible for
     getNumFlightsForTopManufacturers()
     {
-        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func2?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func2');
     }
 
     //The number of planes of each Airbus Model
     getNumPlanesOfAirbusModel()
     {
-        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func3?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
+        return this._http.get('https://manufacturers-endpoint-europe-do62tzdoqq-ew.a.run.app/man_func3');
     }
 }
