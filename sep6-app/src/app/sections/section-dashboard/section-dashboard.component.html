@@ -1,0 +1,6 @@
+<container-element [ngSwitch]="selectedLink">
+    <!-- the same view can be shown in more than one case -->
+    <app-flights-tabgroup *ngSwitchCase="'Flights'"></app-flights-tabgroup>
+    <app-weather-tabgroup *ngSwitchCase="'Weather'"></app-weather-tabgroup>
+    <app-manufacturers-tabgroup *ngSwitchCase="'Manufacturers'"></app-manufacturers-tabgroup>
+</container-element>

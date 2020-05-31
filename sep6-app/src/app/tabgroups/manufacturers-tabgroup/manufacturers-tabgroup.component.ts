@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, OnInit } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { Subject } from 'rxjs';
 
@@ -11,9 +11,13 @@ import { ManufacturersPage3Component } from '../../pages/manufacturers/manufactu
   templateUrl: './manufacturers-tabgroup.component.html',
   styleUrls: ['./manufacturers-tabgroup.component.css']
 })
-export class ManufacturersTabgroupComponent implements AfterViewInit {
+export class ManufacturersTabgroupComponent implements AfterViewInit, OnInit {
 
   constructor() { }
+
+  ngOnInit(): void {
+    
+  }
 
   public activeTab: any;
 

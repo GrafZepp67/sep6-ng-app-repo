@@ -1,0 +1,7 @@
+.mat-tab-label.mat-tab-label-active {
+    background-color: darkgreen;
+}
+
+.mat-ink-bar {
+    background-color: green;
+}

@@ -1,16 +1,11 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-* {
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%
-}
-
+html,
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: black;
     color: white;
+    margin: 0 !important;
+    padding: 0 !important;
     height: 100%;
 }
 
@@ -18,14 +13,18 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 5px 6px rgba(0, 0, 0, 0.3);
 }
 
-.section-container {
-    padding: 10px;
-}
-
 .mat-tab-label {
     font-size: 16px;
     color: white !important;
     background-color: teal !important;
+}
+
+.mat-tab-label::selection {
+    background-color: red !important;
+}
+
+.mat-card .mat-focus-indicator {
+    height: 75vh;
 }
 
 .mat-progress-spinner circle,
@@ -53,5 +52,5 @@ body {
 canvas {
     align-self: center;
     width: 100% !important;
-    height: 450px !important;
+    height: 75vh !important;
 }
