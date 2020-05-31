@@ -119,7 +119,7 @@
 }
 
 .mat-list-item:hover {
-    color: teal;
+    color: cyan;
     background-color: rgb(24, 24, 24);
 }
 

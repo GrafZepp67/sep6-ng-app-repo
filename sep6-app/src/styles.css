@@ -24,6 +24,7 @@ body {
 }
 
 .mat-card .mat-focus-indicator {
+    top: 25vh !important;
     height: 75vh;
 }
 
