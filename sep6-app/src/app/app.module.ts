@@ -19,9 +19,6 @@ import { AuthService } from '../app/services/auth-service/auth.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SectionFlightsComponent } from './sections/section-flights/section-flights.component';
-import { SectionWeatherComponent } from './sections/section-weather/section-weather.component';
-import { SectionManufacturersComponent } from './sections/section-manufacturers/section-manufacturers.component';
 import { FlightsDataService } from './services/data-service/flights-data.service';
 import { WeatherDataService } from './services/data-service/weather-data.service';
 import { ManufacturerDataService } from './services/data-service/manufacturer-data.service';
@@ -54,9 +51,6 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    SectionFlightsComponent,
-    SectionWeatherComponent,
-    SectionManufacturersComponent,
     FlightsTabgroupComponent,
     FlightsPage1Component,
     FlightsPage2Component,
