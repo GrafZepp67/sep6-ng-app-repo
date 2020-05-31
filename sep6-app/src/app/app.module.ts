@@ -19,8 +19,6 @@ import { AuthService } from '../app/services/auth-service/auth.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { SectionFlightsComponent } from './sections/section-flights/section-flights.component';
 import { SectionWeatherComponent } from './sections/section-weather/section-weather.component';
 import { SectionManufacturersComponent } from './sections/section-manufacturers/section-manufacturers.component';
@@ -42,11 +40,11 @@ import { ManufacturersTabgroupComponent } from './tabgroups/manufacturers-tabgro
 import { ManufacturersPage1Component } from './pages/manufacturers/manufacturers-page1/manufacturers-page1.component';
 import { ManufacturersPage2Component } from './pages/manufacturers/manufacturers-page2/manufacturers-page2.component';
 import { ManufacturersPage3Component } from './pages/manufacturers/manufacturers-page3/manufacturers-page3.component';
-import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
-import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
-import { BarChartmultiComponent } from './charts/bar-chartmulti/bar-chartmulti.component';
-import { BarChartstackedComponent } from './charts/bar-chartstacked/bar-chartstacked.component';
-import { ScatterChartComponent } from './charts/scatter-chart/scatter-chart.component';
+import { ProgressSpinnerComponent } from './reusable-components/progress-spinner/progress-spinner.component';
+import { BarChartComponent } from './reusable-components/bar-chart/bar-chart.component';
+import { BarChartmultiComponent } from './reusable-components/bar-chartmulti/bar-chartmulti.component';
+import { BarChartstackedComponent } from './reusable-components/bar-chartstacked/bar-chartstacked.component';
+import { ScatterChartComponent } from './reusable-components/scatter-chart/scatter-chart.component';
 import { SectionLoginComponent } from './sections/section-login/section-login.component';
 import { SectionHomeComponent } from './sections/section-home/section-home.component';
 import { SectionDashboardComponent } from './sections/section-dashboard/section-dashboard.component';
@@ -56,8 +54,6 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SidebarComponent,
     SectionFlightsComponent,
     SectionWeatherComponent,
     SectionManufacturersComponent,

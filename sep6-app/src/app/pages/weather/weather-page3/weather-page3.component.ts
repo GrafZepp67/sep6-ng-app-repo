@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
 
 import { WeatherFunc3Model } from '../../..//models/weather/weather_func3_model';
-import { ScatterChartPoint } from '../../..//models/scatter_chart_point';
+import { ScatterChartPoint } from '../../../models/misc/scatter_chart_point';
 import { WeatherDataService } from '../../../services/data-service/weather-data.service';
 
 const INIT_SCATTERCHART_DATA: any[] = [{x: 0, y: 0}];
