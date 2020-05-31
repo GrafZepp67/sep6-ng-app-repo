@@ -19,7 +19,7 @@ export class SecureInnerPagesGuard implements CanActivate {
           if (authState) {
             //user is already loggedin
             //route the user to Home page
-            this.router.navigate(['/home']);
+            this.router.navigate(['/dashboard']);
             //dont show the login page
             return false;
           } else {

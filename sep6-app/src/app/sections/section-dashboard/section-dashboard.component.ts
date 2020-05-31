@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SectionHomeComponent } from '../section-home/section-home.component';
 
 @Component({
   selector: 'app-section-dashboard',
@@ -7,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionDashboardComponent implements OnInit {
 
-  constructor() { }
+  selectedLink: any;
 
-  
+  constructor(private homeComponent: SectionHomeComponent) 
+  {
+    homeComponent.linkSubject.subscribe((data) => {
 
-  ngOnInit(): void {
+      this.selectedLink = data;
+      console.log("Dashboard observed change in nav link selection, selected tab : " + this.selectedLink);
+    })
+  } 
+
+  ngOnInit(): void 
+  {
+    this.setActiveTabGroup("Flights");
   }
 
+  setActiveTabGroup(value : string)
+  {
+    this.selectedLink = value;
+  }
 }

@@ -43,7 +43,7 @@ export class AuthService {
     .then((credential) => {
       this.ngZone.run(() => {
         //this.router.navigate(['dashboard']);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       });
       this.updateUserData(credential.user);
     }).catch((error) => {

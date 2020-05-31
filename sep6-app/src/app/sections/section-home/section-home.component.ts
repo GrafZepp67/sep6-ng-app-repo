@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth-service/auth.service';
+import { Subject } from 'rxjs';
+import { MatListOption } from '@angular/material/list';
+import { SectionDashboardComponent } from '../section-dashboard/section-dashboard.component';
 
 @Component({
   selector: 'app-section-home',
@@ -12,8 +15,37 @@ export class SectionHomeComponent implements OnInit {
 
   constructor(public authService: AuthService) { }
 
+  public activeLink: any;
+
+  public navOptions: string[] = ['Flights', 'Weather', 'Manufacturers'];
+
+  @ViewChild('navopts') navopts: { selectedLink: any; };
+  @ViewChild( SectionDashboardComponent ) dashboard: any;
+
+  //Observer area start
+  public linkSubject = new Subject<any>();
+  public linkSubject$ = this.linkSubject.asObservable();
+
+  public subscription = this.linkSubject$.subscribe((data: any) => 
+  {
+    this.activeLink = data;
+    console.log(this.activeLink);
+  });
+
+  public updateTabSubject(newActiveLink: any) 
+  {
+    this.linkSubject.next(newActiveLink);
+  }
+  //Observer area end
+
   ngOnInit(): void 
   {
-    this.user = this.authService.getUser();
+    this.user = this.authService.getUser();    
+  }
+
+  onGroupsChange(options : MatListOption[])
+  {
+    this.activeLink = options.map(o => o.value)
+    this.updateTabSubject(this.activeLink);
   }
 }

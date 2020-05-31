@@ -23,6 +23,7 @@
     padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
+    width: auto !important;
     /* Scrollable contents if viewport is shorter than content. */
 }
 
@@ -97,14 +98,22 @@
     border: 1px solid white;
 }
 
+.list-options {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.tabGroup {
+    width: 100%;
+}
+
+#wrapper {
+    width: 100%;
+}
+
 #dashboard-content {
-    height: 100vh;
+    padding: 5px !important;
 }
 
-.mat-sidenav-container {
-    color: black !important;
-}
-
-.mat-sidenav {
-    color: black !important;
+#sidebarMenu {
+    background-color: #191F26 !important;
 }
