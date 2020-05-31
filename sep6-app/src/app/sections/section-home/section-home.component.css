@@ -117,3 +117,13 @@
 #sidebarMenu {
     background-color: #191F26 !important;
 }
+
+.mat-list-item:hover {
+    color: teal;
+    background-color: rgb(24, 24, 24);
+}
+
+.mat-list-item:focus {
+    color: crimson;
+    background-color: rgb(24, 24, 24);
+}

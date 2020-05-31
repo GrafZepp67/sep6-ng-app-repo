@@ -6,6 +6,7 @@ body {
     color: white;
     margin: 0 !important;
     padding: 0 !important;
+    height: 100%;
 }
 
 .shadow {
@@ -16,6 +17,14 @@ body {
     font-size: 16px;
     color: white !important;
     background-color: teal !important;
+}
+
+.mat-tab-label::selection {
+    background-color: red !important;
+}
+
+.mat-card .mat-focus-indicator {
+    height: 75vh;
 }
 
 .mat-progress-spinner circle,

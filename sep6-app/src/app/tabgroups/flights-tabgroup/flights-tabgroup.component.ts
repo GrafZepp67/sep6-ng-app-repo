@@ -20,6 +20,7 @@ export class FlightsTabgroupComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     
   }
+  selectedIndex = 0;
 
   public activeTab: any;
 

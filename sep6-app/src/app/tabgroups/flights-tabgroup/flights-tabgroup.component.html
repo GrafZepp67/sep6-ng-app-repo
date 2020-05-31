@@ -1,5 +1,5 @@
-<mat-tab-group #tabGroup mat-stretch-tabs disableRipple dynamicHeight (selectedTabChange)='onTabSelectChange($event)'>
-    <mat-tab label="Requirement 1.1">
+<mat-tab-group #tabGroup mat-stretch-tabs disableRipple dynamicHeight (selectedTabChange)='onTabSelectChange($event)' [(selectedIndex)]=selectedIndex>
+    <mat-tab label="Requirement 1.1" [aria-label]>
         <app-flights-page1></app-flights-page1>
     </mat-tab>
     <mat-tab label="Requirement 1.2">
