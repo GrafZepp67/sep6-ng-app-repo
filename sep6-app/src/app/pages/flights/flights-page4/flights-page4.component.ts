@@ -20,7 +20,7 @@ export class FlightsPage4Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 100}}]}};
   
   public items: FlightsFunc4Model[] = [];
 
@@ -78,7 +78,7 @@ export class FlightsPage4Component {
       LABEL_ARRAY.push(LABEL);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of Flights'}];
+    this.barChartData = [{data: DATA_ARRAY, label: 'Mean Airtime'}];
     this.barChartLabels = LABEL_ARRAY;
   }  
 }

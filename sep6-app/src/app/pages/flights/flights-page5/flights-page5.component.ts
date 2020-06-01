@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FlightsFunc5Model } from '../../..//models/flights/flights_func5_model';
 import { FlightsDataService } from '../../../services/data-service/flights-data.service';
 
+const BARCHART_LABELS: string[] = ['EWR','JFK','LGA'];
+
 @Component({
   selector: 'app-flights-page5',
   templateUrl: './flights-page5.component.html',
@@ -10,6 +12,8 @@ import { FlightsDataService } from '../../../services/data-service/flights-data.
 export class FlightsPage5Component {
 
   constructor(private dataService: FlightsDataService) { }
+
+  public MULT_BARCHART_DATA: any[] = [];
 
   public isInitialized: boolean = false;
 
@@ -20,10 +24,11 @@ export class FlightsPage5Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: -0.1}}]} };
   
   public items: FlightsFunc5Model[] = [];
 
+  
   initComponent()
   {
     if(!this.isInitialized)
@@ -55,9 +60,8 @@ export class FlightsPage5Component {
     for(let i = 0; i < response.length; i++)
     {
       const ITEM: FlightsFunc5Model = {        
-        origin: response[i].origin,
-        meanDepartureTime: response[i].meanDepartureTime,
-        meanArrivalTime: response[i].meanArrivalTime        
+        meanDepartureDelay: response[i].meanDepartureDelay,
+        meanArrivalDelay: response[i].meanArrivalDelay        
       };
       
       ITEMS.push(ITEM);
@@ -67,19 +71,22 @@ export class FlightsPage5Component {
 
   loadItemsToBarChart(items: any) 
   {
-    const DATA_ARRAY: number[] = [];
-    const LABEL_ARRAY: string[] = [];
+    const DATA_DEP_DELAY_ARRAY: number[] = [];
+    const DATA_ARR_DELAY_ARRAY: number[] = [];
 
     for(let i = 0; i < items.length; i++)
     {
-      const DATA: number = items[i].meanDepartureTime;
-      const LABEL: string = items[i].origin;
-
-      DATA_ARRAY.push(DATA);
-      LABEL_ARRAY.push(LABEL);
+      const DATA_DEP_DELAY: number = items[i].meanDepartureDelay;
+      const DATA_ARR_DELAY: number = items[i].meanArrivalDelay;
+      
+      DATA_DEP_DELAY_ARRAY.push(DATA_DEP_DELAY);
+      DATA_ARR_DELAY_ARRAY.push(DATA_ARR_DELAY);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of Flights'}];
-    this.barChartLabels = LABEL_ARRAY;
+    this.barChartData = [
+      {data: DATA_DEP_DELAY_ARRAY, label: 'Mean Departure Delay'},
+      {data: DATA_ARR_DELAY_ARRAY, label: 'Mean Arrival Delay'}
+      ];   
+    this.barChartLabels = BARCHART_LABELS;
   }  
 }

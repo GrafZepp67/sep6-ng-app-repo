@@ -97,7 +97,7 @@ export class FlightsPage2Component implements OnInit{
       LABEL_ARRAY.push(LABEL);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number: JFK'}];
+    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of flights/month: JFK'}];
     this.barChartLabels = LABEL_ARRAY;
   }  
 }

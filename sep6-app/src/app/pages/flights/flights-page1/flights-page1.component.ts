@@ -21,7 +21,7 @@ export class FlightsPage1Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {ticks: {min: 11700}}}]}};
+  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 11700}}]}};
   
   public items: FlightsFunc1Model[] = [];
 
@@ -79,7 +79,7 @@ export class FlightsPage1Component {
       LABEL_ARRAY.push(LABEL);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of Flights'}];
+    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of flights/month'}];
     this.barChartLabels = LABEL_ARRAY;
   }
 }
