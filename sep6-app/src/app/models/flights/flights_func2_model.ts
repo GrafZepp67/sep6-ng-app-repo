@@ -1,6 +1,6 @@
 export interface FlightsFunc2Model
 {
-    month: number;
+    month: string;
     origin: string;
     flights: number;
     percentage: number;

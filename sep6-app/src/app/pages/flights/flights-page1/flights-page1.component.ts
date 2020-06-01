@@ -12,6 +12,7 @@ export class FlightsPage1Component {
   constructor(private dataService: FlightsDataService) { }
 
   public isInitialized: boolean = false;
+  public sortedArray: any[] = [];
 
   showSpinner = true;
   showChart = false;
@@ -20,7 +21,7 @@ export class FlightsPage1Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {ticks: {min: 11700}}}]}};
   
   public items: FlightsFunc1Model[] = [];
 
@@ -71,8 +72,8 @@ export class FlightsPage1Component {
 
     for(let i = 0; i < items.length; i++)
     {
-      const DATA: number = items[i].month;
-      const LABEL: string = items[i].flights;
+      const DATA: number = items[i].flights;
+      const LABEL: string = items[i].month;
 
       DATA_ARRAY.push(DATA);
       LABEL_ARRAY.push(LABEL);
@@ -80,5 +81,5 @@ export class FlightsPage1Component {
 
     this.barChartData = [{data: DATA_ARRAY, label: 'Total number of Flights'}];
     this.barChartLabels = LABEL_ARRAY;
-  }  
+  }
 }

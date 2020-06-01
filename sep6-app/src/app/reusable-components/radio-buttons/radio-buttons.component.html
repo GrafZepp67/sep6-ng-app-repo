@@ -1,6 +1,6 @@
 <label id="example-radio-group-label">Total number of flights per month from the three origins in one plot. Select option: </label>
-<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" disableRipple>
-    <mat-radio-button class=" example-radio-button " *ngFor="let option of options " [value]="option ">
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" disableRipple (change)="radioChange($event)">
+    <mat-radio-button class=" example-radio-button " *ngFor="let option of options" [value]="option ">
         {{option}}
     </mat-radio-button>
 </mat-radio-group>

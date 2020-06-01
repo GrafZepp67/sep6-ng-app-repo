@@ -1,5 +1,5 @@
 export interface FlightsFunc1Model
 {
-    month: number;
+    month: string;
     flights: number;
 }

@@ -20,20 +20,17 @@ export class FlightsPage3Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 11700}}]}};
   
   public items: FlightsFunc3Model[] = [];
 
   initComponent()
-  {
-    console.log("Not implemented yet!")
-
-    /*
+  {    
     if(!this.isInitialized)
     {
       this.getData();
       this.isInitialized = true;
-    }   */
+    }   
   }
 
   getData()
@@ -41,7 +38,7 @@ export class FlightsPage3Component {
     this.showChart = false;   
     this.showSpinner = true;
 
-    this.dataService.getTotalNumberOfFlightsPerMonth()
+    this.dataService.getTop10DestinationsAndNumberOfFlights()
     .subscribe(response =>
       {
         this.items = this.parseResponse(response);
@@ -76,14 +73,14 @@ export class FlightsPage3Component {
 
     for(let i = 0; i < items.length; i++)
     {
-      const DATA: number = items[i].month;
-      const LABEL: string = items[i].flights;
+      const DATA: number = items[i].flights;
+      const LABEL: string = items[i].dest;
 
       DATA_ARRAY.push(DATA);
       LABEL_ARRAY.push(LABEL);
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of Flights'}];
+    this.barChartData = [{data: DATA_ARRAY, label: 'Top destinations'}];
     this.barChartLabels = LABEL_ARRAY;
   }  
 }

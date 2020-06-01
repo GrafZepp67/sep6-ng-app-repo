@@ -25,15 +25,12 @@ export class FlightsPage4Component {
   public items: FlightsFunc4Model[] = [];
 
   initComponent()
-  {
-    console.log("Not implemented yet!")
-
-    /*
+  {    
     if(!this.isInitialized)
     {
       this.getData();
       this.isInitialized = true;
-    }   */
+    }
   }
 
   getData()
@@ -41,7 +38,7 @@ export class FlightsPage4Component {
     this.showChart = false;   
     this.showSpinner = true;
 
-    this.dataService.getTotalNumberOfFlightsPerMonth()
+    this.dataService.getMeanAirtimeOfEachOfTheOrigins()
     .subscribe(response =>
       {
         this.items = this.parseResponse(response);
@@ -74,8 +71,8 @@ export class FlightsPage4Component {
 
     for(let i = 0; i < items.length; i++)
     {
-      const DATA: number = items[i].month;
-      const LABEL: string = items[i].flights;
+      const DATA: number = items[i].meanAirTime;
+      const LABEL: string = items[i].origin;
 
       DATA_ARRAY.push(DATA);
       LABEL_ARRAY.push(LABEL);
