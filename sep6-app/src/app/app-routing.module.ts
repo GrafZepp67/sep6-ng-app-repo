@@ -6,10 +6,10 @@ import { AuthGuard } from "./services/auth-service/guard/auth.guard";
 import { SecureInnerPagesGuard } from "./services/auth-service/guard/secure-inner-pages.guard";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: SectionLoginComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'dashboard', component: SectionHomeComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
