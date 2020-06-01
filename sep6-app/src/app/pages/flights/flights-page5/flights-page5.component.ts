@@ -13,8 +13,6 @@ export class FlightsPage5Component {
 
   constructor(private dataService: FlightsDataService) { }
 
-  public MULT_BARCHART_DATA: any[] = [];
-
   public isInitialized: boolean = false;
 
   showSpinner = true;
@@ -27,7 +25,6 @@ export class FlightsPage5Component {
   public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: -1}}]} };
   
   public items: FlightsFunc5Model[] = [];
-
   
   initComponent()
   {
@@ -83,10 +80,12 @@ export class FlightsPage5Component {
       DATA_ARR_DELAY_ARRAY.push(DATA_ARR_DELAY);
     }
 
-    this.barChartData = [
+    this.barChartData = 
+    [
       {data: DATA_DEP_DELAY_ARRAY, label: 'Mean Departure Delay'},
       {data: DATA_ARR_DELAY_ARRAY, label: 'Mean Arrival Delay'}
-      ];   
+    ];
+
     this.barChartLabels = BARCHART_LABELS;
   }  
 }

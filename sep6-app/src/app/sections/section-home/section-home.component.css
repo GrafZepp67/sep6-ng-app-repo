@@ -127,3 +127,11 @@
     color: crimson;
     background-color: rgb(24, 24, 24);
 }
+
+.mat-option.mat-active {
+    background: blue !important;
+}
+
+.mat-option.mat-selected {
+    background: red !important;
+}
