@@ -1,20 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightsFunc2Model } from '../../..//models/flights/flights_func2_model';
 import { FlightsDataService } from '../../../services/data-service/flights-data.service';
-import { RadioButtonsComponent } from '../../../reusable-components/radio-buttons/radio-buttons.component';
+import { MatRadioChange } from '@angular/material/radio';
+import { Subject } from 'rxjs';
+
+const ITEMS: FlightsFunc2Model[] = [];
+const BARCHART_LABELS: string[] = ['January','February','March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 @Component({
   selector: 'app-flights-page2',
   templateUrl: './flights-page2.component.html',
   styleUrls: ['./flights-page2.component.css']
 })
-export class FlightsPage2Component implements OnInit{
+export class FlightsPage2Component {
 
-  public selectedOption: any;
+  constructor(private dataService: FlightsDataService) {}
 
-  constructor(private dataService: FlightsDataService, public radioButtons: RadioButtonsComponent) 
-  { 
+  //Observer area start
+  public selectedOption: string;
+  public options: string[] = ['Frequency', 'Frequency stacked', 'Stacked Percentage'];
+
+  public optionSubject = new Subject<any>();
+  public optionSubject$ = this.optionSubject.asObservable();
+
+  radioChange($event: MatRadioChange)
+  {
+    this.selectedOption = $event.value;
+    this.updateTabSubject(this.selectedOption);
+
+    this.loadItemsToBarChart(ITEMS,this.selectedOption);
   }
+
+  public updateTabSubject(newActiveLink: any) 
+  {
+    this.optionSubject.next(newActiveLink);
+  }
+
+  public subscription = this.optionSubject$.subscribe((data: any) => 
+  {    
+    this.selectedOption = data;
+  });
+
+  //Observer area end
 
   public isInitialized: boolean = false;
 
@@ -25,41 +52,31 @@ export class FlightsPage2Component implements OnInit{
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 11700}}]}};
+  public barChartOptions: any = [];
+  //public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
   
   public items: FlightsFunc2Model[] = [];
 
-  ngOnInit(): void 
-  {    
-    this.radioButtons.optionSubject.subscribe((data => {
-      console.log("Change caught!")
-      this.selectedOption = data;
-      console.log("Flights page 2 observed change in radio button option selection, selected tab : " + this.selectedOption);
-    }))  
-  }
-
-
   initComponent()
   {
-    console.log("Flights page 2 initialized!")
-
     if(!this.isInitialized)
     {
+      this.selectedOption = this.options[0];
+      this.updateTabSubject(this.selectedOption);
       this.getData();
       this.isInitialized = true;
     }  
   }
-
   getData()
   {
     this.showChart = false;   
     this.showSpinner = true;
 
-    this.dataService.getTotalNumberOfFlightsPerMonth()
+    this.dataService.getTotalNumberOfFlightsPerMonthFromThreeOrigins()
     .subscribe(response =>
       {
         this.items = this.parseResponse(response);
-        this.loadItemsToBarChart(this.items);
+        this.loadItemsToBarChart(ITEMS, this.selectedOption);
         this.showSpinner = false;
         this.showChart = true;
       });
@@ -67,8 +84,6 @@ export class FlightsPage2Component implements OnInit{
 
   parseResponse(response: any)
   {
-    const ITEMS: FlightsFunc2Model[] = [];
-
     for(let i = 0; i < response.length; i++)
     {
       const ITEM: FlightsFunc2Model = {        
@@ -83,21 +98,156 @@ export class FlightsPage2Component implements OnInit{
     return ITEMS;
   }
 
-  loadItemsToBarChart(items: any) 
+  loadItemsToBarChart(items: any, option: string) 
   {
-    const DATA_ARRAY: number[] = [];
-    const LABEL_ARRAY: string[] = [];
+    this.clearChart();
+
+    switch(option)
+    {
+      case "Frequency":
+
+        this.showFrequencyChart(items);
+
+      break;
+
+      case "Frequency stacked":
+
+        this.showStackedFrequencyChart(items);
+
+      break;
+
+      case "Stacked Percentage":
+
+        this.showStackedPercentageChart(items);
+
+      break;
+    }
+  }  
+
+  showFrequencyChart(items: any)
+  {
+    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
+
+    const FREQ_FLIGHTS_JFK_ARRAY: number[] = [];
+    const FREQ_FLIGHTS_LGA_ARRAY: number[] = [];
+    const FREQ_FLIGHTS_EWR_ARRAY: number[] = [];
 
     for(let i = 0; i < items.length; i++)
     {
-      const DATA: number = items[i].flights;
-      const LABEL: string = items[i].month;
+      if(items[i].origin == "JFK")
+      {
+        const FREQ_FLIGHTS_JFK: number = items[i].flights;
+        FREQ_FLIGHTS_JFK_ARRAY.push(FREQ_FLIGHTS_JFK);
+      }
 
-      DATA_ARRAY.push(DATA);
-      LABEL_ARRAY.push(LABEL);
+      if(items[i].origin == "LGA")
+      {
+        const FREQ_FLIGHTS_LGA: number = items[i].flights;
+        FREQ_FLIGHTS_LGA_ARRAY.push(FREQ_FLIGHTS_LGA);
+      }
+
+      if(items[i].origin == "EWR")
+      {
+        const FREQ_FLIGHTS_EWR: number = items[i].flights;
+        FREQ_FLIGHTS_EWR_ARRAY.push(FREQ_FLIGHTS_EWR);
+      }
     }
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Total number of flights/month: JFK'}];
-    this.barChartLabels = LABEL_ARRAY;
-  }  
+    this.barChartData = [
+      {data: FREQ_FLIGHTS_JFK_ARRAY, label: 'JFK'},
+      {data: FREQ_FLIGHTS_LGA_ARRAY, label: 'LGA'},
+      {data: FREQ_FLIGHTS_EWR_ARRAY, label: 'EWR'},
+      ];   
+    this.barChartLabels = BARCHART_LABELS;
+  }
+
+  showStackedFrequencyChart(items: any)
+  {
+    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
+      xAxes: [{ stacked: true }], 
+      yAxes: [{ stacked: true, ticks: {beginAtZero:true}}]
+      }
+    };
+
+    const FREQ_FLIGHTS_JFK_ARRAY: number[] = [];
+    const FREQ_FLIGHTS_LGA_ARRAY: number[] = [];
+    const FREQ_FLIGHTS_EWR_ARRAY: number[] = [];
+
+    for(let i = 0; i < items.length; i++)
+    {
+      if(items[i].origin == "JFK")
+      {
+        const FREQ_FLIGHTS_JFK: number = items[i].flights;
+        FREQ_FLIGHTS_JFK_ARRAY.push(FREQ_FLIGHTS_JFK);
+      }
+
+      if(items[i].origin == "LGA")
+      {
+        const FREQ_FLIGHTS_LGA: number = items[i].flights;
+        FREQ_FLIGHTS_LGA_ARRAY.push(FREQ_FLIGHTS_LGA);
+      }
+
+      if(items[i].origin == "EWR")
+      {
+        const FREQ_FLIGHTS_EWR: number = items[i].flights;
+        FREQ_FLIGHTS_EWR_ARRAY.push(FREQ_FLIGHTS_EWR);
+      }
+    }
+
+    this.barChartData = [
+      {data: FREQ_FLIGHTS_JFK_ARRAY, label: 'JFK'},
+      {data: FREQ_FLIGHTS_LGA_ARRAY, label: 'LGA'},
+      {data: FREQ_FLIGHTS_EWR_ARRAY, label: 'EWR'},
+      ];   
+    this.barChartLabels = BARCHART_LABELS;
+  }
+
+  showStackedPercentageChart(items: any)
+  {
+    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
+      xAxes: [{ stacked: true }], 
+      yAxes: [{ stacked: true, ticks: {beginAtZero:true}}]
+      }
+    };
+
+    const PERCENTAGE_JFK_ARRAY: number[] = [];
+    const PERCENTAGE_LGA_ARRAY: number[] = [];
+    const PERCENTAGE_EWR_ARRAY: number[] = [];
+
+    for(let i = 0; i < items.length; i++)
+    {
+      if(items[i].origin == "JFK")
+      {
+        const PERCENTAGE_JFK: number = items[i].percentage;
+        PERCENTAGE_JFK_ARRAY.push(PERCENTAGE_JFK);
+      }
+
+      if(items[i].origin == "LGA")
+      {
+        const PERCENTAGE_LGA: number = items[i].percentage;
+        PERCENTAGE_LGA_ARRAY.push(PERCENTAGE_LGA);
+      }
+
+      if(items[i].origin == "EWR")
+      {
+        const PERCENTAGE_EWR: number = items[i].percentage;
+        PERCENTAGE_EWR_ARRAY.push(PERCENTAGE_EWR);
+      }
+    }
+
+    this.barChartData = [
+      {data: PERCENTAGE_JFK_ARRAY, label: 'JFK'},
+      {data: PERCENTAGE_LGA_ARRAY, label: 'LGA'},
+      {data: PERCENTAGE_EWR_ARRAY, label: 'EWR'},
+      ];   
+    this.barChartLabels = BARCHART_LABELS;
+  }
+
+  clearChart()
+  {
+    const EMPTY_DATA: number[] = [];
+    this.barChartData = [
+      {data: EMPTY_DATA, label: ''}];   
+    this.barChartLabels = BARCHART_LABELS;
+  }
 }

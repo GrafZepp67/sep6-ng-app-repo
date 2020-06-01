@@ -1,0 +1,11 @@
+.example-radio-button {
+    margin: 5px;
+}
+
+.example-radio-group-label {
+    margin: 6px 12px 6px 12px;
+}
+
+.mat-ripple-element {
+    display: none !important;
+}

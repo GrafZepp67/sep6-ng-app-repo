@@ -16,7 +16,7 @@ export class FlightsDataService {
     }
 
     //Total number of flights per month from the three origins in one plot
-    getTotalNumberOfFlightsPerMonthFromTHreeOrigins()
+    getTotalNumberOfFlightsPerMonthFromThreeOrigins()
     {
         return this._http.get('https://flights-endpoint-do62tzdoqq-ew.a.run.app/flights_func2?key=AIzaSyB98vsc9EId-Y0hLGjdGSRqZqUARc2E77c');
     }

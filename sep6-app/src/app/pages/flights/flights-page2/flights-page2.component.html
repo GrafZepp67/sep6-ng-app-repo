@@ -1,7 +1,13 @@
 <mat-card>
     <mat-card-content>
         <div class="section-container">
-            <app-radio-buttons class="radioBtnGroup"></app-radio-buttons>
+
+            <mat-radio-group #radioGroup aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" disableRipple (change)="radioChange($event)">
+                <mat-radio-button class=" example-radio-button " *ngFor="let option of options" [value]="option ">
+                    {{option}}
+                </mat-radio-button>
+            </mat-radio-group>
+
             <div *ngIf="showSpinner" class="pgr-spinner">
                 <app-progress-spinner></app-progress-spinner>
             </div>

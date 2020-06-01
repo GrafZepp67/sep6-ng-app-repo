@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { MatRadioChange } from '@angular/material/radio';
 
@@ -11,7 +11,6 @@ export class RadioButtonsComponent implements OnInit {
 
   constructor() { }
 
-  
   public selectedOption: string;
   public options: string[] = ['Frequency', 'Frequency stacked', 'Stacked Percentage'];
 
@@ -27,7 +26,6 @@ export class RadioButtonsComponent implements OnInit {
 
   public updateTabSubject(newActiveLink: any) 
   {
-    console.log("Subject updated!")
     this.optionSubject.next(newActiveLink);
   }
   //Observer area end
@@ -40,6 +38,7 @@ export class RadioButtonsComponent implements OnInit {
 
   radioChange($event: MatRadioChange)
   {
+    //this.selectedOption = $event.value;
     this.selectedOption = $event.value;
     this.updateTabSubject(this.selectedOption);
   }

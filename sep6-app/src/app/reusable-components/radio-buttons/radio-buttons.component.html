@@ -1,4 +1,4 @@
-<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" disableRipple (change)="radioChange($event)">
+<mat-radio-group #radioGroup aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="selectedOption" disableRipple (change)="radioChange($event)">
     <mat-radio-button class=" example-radio-button " *ngFor="let option of options" [value]="option ">
         {{option}}
     </mat-radio-button>
