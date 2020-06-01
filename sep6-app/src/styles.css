@@ -25,7 +25,7 @@ body {
 
 .mat-card .mat-focus-indicator {
     top: 25vh !important;
-    height: 75vh;
+    height: 72vh;
 }
 
 .mat-progress-spinner circle,
@@ -53,7 +53,7 @@ body {
 canvas {
     align-self: center;
     width: 100% !important;
-    height: 70vh !important;
+    height: 72vh !important;
 }
 
 .mat-radio-outer-circle {

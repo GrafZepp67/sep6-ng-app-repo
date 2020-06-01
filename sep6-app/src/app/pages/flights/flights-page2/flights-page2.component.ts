@@ -53,8 +53,7 @@ export class FlightsPage2Component {
   public barChartType = 'bar';
   public barChartLegend = true;
   public barChartOptions: any = [];
-  //public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
-  
+
   public items: FlightsFunc2Model[] = [];
 
   initComponent()
@@ -67,6 +66,7 @@ export class FlightsPage2Component {
       this.isInitialized = true;
     }  
   }
+  
   getData()
   {
     this.showChart = false;   
