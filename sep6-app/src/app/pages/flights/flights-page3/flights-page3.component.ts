@@ -49,7 +49,6 @@ export class FlightsPage3Component {
       {
         this.respItems = this.parseResponse(response);
         this.groupedItems = this.groupItems(this.respItems);
-        this.setBarchartLabels(this.groupedItems);
         this.fixedItems = this.insertWhereOriginKeyValueEmpty(this.groupedItems);
         this.setBarchartData(this.fixedItems);
         this.showSpinner = false;
@@ -100,6 +99,7 @@ export class FlightsPage3Component {
   groupItems(items: any[])
   {
     items = this.groupBy(items, 'dest');
+    this.barChartLabels = Object.keys(items)
     return Object.values(items);
   }
 
@@ -122,11 +122,6 @@ export class FlightsPage3Component {
             String(flightNum[key]).toLowerCase().includes(lowSearch) 
         );
     });
-  }
-
-  setBarchartLabels(groupedItems: any[])
-  {
-    this.barChartLabels =  Object.keys(groupedItems);
   }
 
   setBarchartData(fixedItems: any[]) 

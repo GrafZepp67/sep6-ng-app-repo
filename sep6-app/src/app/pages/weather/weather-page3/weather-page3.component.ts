@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
+import * as moment from 'moment';
 
 import { WeatherFunc3Model } from '../../..//models/weather/weather_func3_model';
 import { ScatterChartPoint } from '../../../models/misc/scatter_chart_point';
@@ -27,10 +28,26 @@ export class WeatherPage3Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    title:{
+      display: true,
+      text:"The temperature (in Celsius) at JFK"
+    },
     maintainAspectRatio: false,
     animation:
     {
       duration: 0
+    },
+    scales: {
+      xAxes: [{
+        type: 'time',
+        time: {
+        	unit: 'month',
+      		unitStepSize: 1,
+          displayFormats: {
+            'month': 'MMM DD YYYY'
+          }
+        }
+      }],
     }
   };
 
@@ -107,7 +124,8 @@ export class WeatherPage3Component {
     for(let i = 0; i < items.length; i++)
     {
       const DATA_POINT: ScatterChartPoint ={
-        x: items[i].time_epoch,
+        //x: moment(items[i].time_epoch),
+        x: moment.unix(items[i].time_epoch).format('MMM DD YY'),
         y: items[i].jfk_temp
       };
 

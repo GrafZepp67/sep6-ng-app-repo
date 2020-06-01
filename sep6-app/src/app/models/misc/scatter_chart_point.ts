@@ -1,5 +1,5 @@
 export interface ScatterChartPoint
 {
-    x: number,
+    x: any,
     y: number
 }

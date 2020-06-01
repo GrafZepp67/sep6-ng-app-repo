@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
+import * as moment from 'moment';
 
 import { WeatherFunc4Model } from '../../..//models/weather/weather_func4_model';
 import { WeatherDataService } from '../../../services/data-service/weather-data.service';
@@ -29,7 +30,19 @@ export class WeatherPage4Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        type: 'time',
+        time: {
+        	unit: 'month',
+      		unitStepSize: 1,
+          displayFormats: {
+            'month': 'MMM DD YYYY'
+          }
+        }
+      }],
+    }
   };
 
   //Initialize empty scatter chart
@@ -107,19 +120,19 @@ export class WeatherPage4Component {
     for(let i = 0; i < items.length; i++)
     {
       const DATA_POINT_JFK: ScatterChartPoint ={
-        x: items[i].time_epoch,
+        x: moment.unix(items[i].time_epoch).format('MMM DD YY'),
         y: items[i].jfk_temp
       };
       JFK_DATASET.push(DATA_POINT_JFK);
 
       const DATA_POINT_EWR: ScatterChartPoint ={
-        x: items[i].time_epoch,
+        x: moment.unix(items[i].time_epoch).format('MMM DD YY'),
         y: items[i].ewr_temp
       };
       EWR_DATASET.push(DATA_POINT_EWR);
 
       const DATA_POINT_LGA: ScatterChartPoint ={
-        x: items[i].time_epoch,
+        x: moment.unix(items[i].time_epoch).format('MMM DD YY'),
         y: items[i].lga_temp
       };
       LGA_DATASET.push(DATA_POINT_LGA);
