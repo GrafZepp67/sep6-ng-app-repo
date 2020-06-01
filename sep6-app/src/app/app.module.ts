@@ -47,6 +47,10 @@ import { SectionHomeComponent } from './sections/section-home/section-home.compo
 import { SectionDashboardComponent } from './sections/section-dashboard/section-dashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { RadioButtonsComponent } from './reusable-components/radio-buttons/radio-buttons.component';
+import { FormsModule } from '@angular/forms';
+import {MatRippleModule} from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -74,6 +78,7 @@ import { MatButtonModule } from '@angular/material/button';
     SectionHomeComponent,
     SectionDashboardComponent,
     FlightsPage5Component,
+    RadioButtonsComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +97,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     LayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    FormsModule,
+    MatRippleModule
   ],
   providers: [
     FlightsDataService,

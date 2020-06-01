@@ -55,3 +55,24 @@ canvas {
     width: 100% !important;
     height: 75vh !important;
 }
+
+.mat-radio-outer-circle {
+    border-color: crimson;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: crimson;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    color: rgb(66, 134, 244);
+    background-color: cyan;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: rgb(255, 37, 37, .26);
+}
+
+.mat-ripple-element {
+    display: none !important;
+}
