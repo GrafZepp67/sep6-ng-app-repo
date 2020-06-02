@@ -29,8 +29,11 @@
 
         <main role="main" id="dashboard-content" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom">
-                <router-outlet></router-outlet>
+                <!--<router-outlet class="routerOut"></router-outlet>-->
                 <!--<app-section-dashboard class="tabGroup"></app-section-dashboard>-->
+                <div fxFlex fxLayout="column" id="routerParent">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
         </main>
     </div>

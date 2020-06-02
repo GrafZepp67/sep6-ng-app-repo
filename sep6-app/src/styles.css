@@ -7,6 +7,7 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     height: 100%;
+    width: 100%;
 }
 
 .shadow {
@@ -75,4 +76,31 @@ canvas {
 
 .mat-ripple-element {
     display: none !important;
+}
+
+.mat-tab-group {
+    width: 100% !important;
+    display: flex;
+}
+
+.mat-tab-label.mat-tab-label-active {
+    background-color: darkgreen;
+}
+
+.mat-ink-bar {
+    background-color: green;
+}
+
+.md-tab-label {
+    max-width: 20px !important;
+}
+
+.router-flex {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+#routerParent {
+    width: 100%;
 }

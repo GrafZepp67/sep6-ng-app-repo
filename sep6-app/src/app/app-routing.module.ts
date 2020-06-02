@@ -10,7 +10,7 @@ import { WeatherTabgroupComponent } from './tabgroups/weather-tabgroup/weather-t
 import { SectionWelcomeComponent } from './sections/section-welcome/section-welcome.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/dashboard/home', pathMatch: 'full'},
   { path: 'login', component: SectionLoginComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'dashboard', component: SectionHomeComponent, canActivate: [AuthGuard],
     children: [
@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'manufacturers', component: WeatherTabgroupComponent},
     ]
   },
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: '**', redirectTo: '/dashboard/home', pathMatch: 'full'}
 ];
 
 @NgModule({
