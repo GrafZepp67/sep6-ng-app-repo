@@ -14,8 +14,8 @@
 <div class="container-fluid px-3">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar navbar-collapse collapse">
-            <div class="sidebar-sticky pt-3">
-                <mat-selection-list #navopts role="list" [multiple]="false" (selectionChange)="onGroupsChange(navopts.selectedOptions.selected)">
+            <div class="sidebar-sticky navbar-nav pt-3">
+                <mat-selection-list class="nav-item" #navopts role="list" [multiple]="false" (selectionChange)="onGroupsChange(navopts.selectedOptions.selected)">
                     <mat-list-option class="list-options" *ngFor="let option of navOptions" [value]="option">
                         {{option}}
                     </mat-list-option>
