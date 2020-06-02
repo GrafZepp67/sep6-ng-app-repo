@@ -46,4 +46,11 @@ export class SectionHomeComponent implements OnInit {
     this.activeLink = options.map(o => o.value)
     this.updateTabSubject(this.activeLink);
   }
+
+  closeMenu() {
+    var isMobile = /iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      document.getElementById('navButton').click();
+   }
+}
 }

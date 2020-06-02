@@ -135,3 +135,7 @@
 .mat-option.mat-selected {
     background: red !important;
 }
+
+.navbar-toggler {
+    margin: 10px !important;
+}
