@@ -18,7 +18,7 @@ export class FlightsPage2Component {
 
   //Observer area start
   public selectedOption: string;
-  public options: string[] = ['Frequency', 'Frequency stacked', 'Stacked Percentage'];
+  public options: string[] = ['Frequency', 'Frequency stacked', 'Stacked percentage'];
 
   public optionSubject = new Subject<any>();
   public optionSubject$ = this.optionSubject.asObservable();
@@ -116,7 +116,7 @@ export class FlightsPage2Component {
 
       break;
 
-      case "Stacked Percentage":
+      case "Stacked percentage":
 
         this.showStackedPercentageChart(items);
 
