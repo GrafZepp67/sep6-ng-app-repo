@@ -11,13 +11,9 @@ import { ManufacturersPage3Component } from '../../pages/manufacturers/manufactu
   templateUrl: './manufacturers-tabgroup.component.html',
   styleUrls: ['./manufacturers-tabgroup.component.css']
 })
-export class ManufacturersTabgroupComponent implements AfterViewInit, OnInit {
+export class ManufacturersTabgroupComponent implements AfterViewInit {
 
   constructor() { }
-
-  ngOnInit(): void {
-    
-  }
 
   public activeTab: any;
 

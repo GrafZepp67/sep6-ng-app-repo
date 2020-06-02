@@ -14,12 +14,9 @@ import { FlightsPage5Component } from '../../pages/flights/flights-page5/flights
   templateUrl: './flights-tabgroup.component.html',
   styleUrls: ['./flights-tabgroup.component.css']
 })
-export class FlightsTabgroupComponent implements AfterViewInit, OnInit {
+export class FlightsTabgroupComponent implements AfterViewInit {
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
   selectedIndex = 0;
 
   public activeTab: any;
@@ -81,6 +78,8 @@ export class FlightsTabgroupComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit() 
   {    
+    console.log("FLights tabgroup afterView init!")
+
     this.activeTab = this.tabGroup.selectedIndex;
     this.updateTabSubject(this.activeTab);
   }  

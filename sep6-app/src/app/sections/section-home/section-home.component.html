@@ -19,17 +19,18 @@
                     <!--<mat-list-option class="list-options" *ngFor="let option of navOptions" [value]="option" (click)="closeMenu()">
                         {{option}}
                     </mat-list-option>-->
-                    <mat-list-option class="list-options" [value]="homeOpt" (click)="closeMenu()">Home</mat-list-option>
-                    <mat-list-option class="list-options" [value]="flightsOpt" (click)="closeMenu()">1. Flights</mat-list-option>
-                    <mat-list-option class="list-options" [value]="weatherOpt" (click)="closeMenu()">2. Weather</mat-list-option>
-                    <mat-list-option class="list-options" [value]="manufacturersOpt" (click)="closeMenu()">3. Manufacturers</mat-list-option>
+                    <mat-list-option class="list-options" [value]="homeOpt" (click)="closeMenu()" [routerLink]="['./home']">Home</mat-list-option>
+                    <mat-list-option class="list-options" [value]="flightsOpt" (click)="closeMenu()" [routerLink]="['./flights']">1. Flights</mat-list-option>
+                    <mat-list-option class="list-options" [value]="weatherOpt" (click)="closeMenu()" [routerLink]="['./weather']">2. Weather</mat-list-option>
+                    <mat-list-option class="list-options" [value]="manufacturersOpt" (click)="closeMenu()" [routerLink]="['./manufacturers']">3. Manufacturers</mat-list-option>
                 </mat-selection-list>
             </div>
         </nav>
 
         <main role="main" id="dashboard-content" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom">
-                <app-section-dashboard class="tabGroup"></app-section-dashboard>
+                <router-outlet></router-outlet>
+                <!--<app-section-dashboard class="tabGroup"></app-section-dashboard>-->
             </div>
         </main>
     </div>
