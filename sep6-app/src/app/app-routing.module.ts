@@ -8,6 +8,7 @@ import { SectionDashboardComponent } from './sections/section-dashboard/section-
 import { FlightsTabgroupComponent } from './tabgroups/flights-tabgroup/flights-tabgroup.component';
 import { WeatherTabgroupComponent } from './tabgroups/weather-tabgroup/weather-tabgroup.component';
 import { SectionWelcomeComponent } from './sections/section-welcome/section-welcome.component';
+import { ManufacturersTabgroupComponent } from './tabgroups/manufacturers-tabgroup/manufacturers-tabgroup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full'},
@@ -18,7 +19,7 @@ const routes: Routes = [
       { path: 'home', component: SectionWelcomeComponent},
       { path: 'flights', component: FlightsTabgroupComponent},
       { path: 'weather', component: WeatherTabgroupComponent},
-      { path: 'manufacturers', component: WeatherTabgroupComponent},
+      { path: 'manufacturers', component: ManufacturersTabgroupComponent},
     ]
   },
   { path: '**', redirectTo: '/dashboard/home', pathMatch: 'full'}
