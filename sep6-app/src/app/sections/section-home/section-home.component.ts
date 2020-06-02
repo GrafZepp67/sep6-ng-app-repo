@@ -16,7 +16,12 @@ export class SectionHomeComponent implements OnInit {
 
   public activeLink: any;
 
-  public navOptions: string[] = ['1. Flights', '2. Weather', '3. Manufacturers'];
+  public navOptions: string[] = ['Home', '1. Flights', '2. Weather', '3. Manufacturers'];
+
+  public homeOpt: string = 'home';
+  public flightsOpt: string = 'flights';
+  public weatherOpt: string = 'weather';
+  public manufacturersOpt: string = 'manufacturers';
 
   @ViewChild('navopts') navopts: { selectedLink: any; };
 

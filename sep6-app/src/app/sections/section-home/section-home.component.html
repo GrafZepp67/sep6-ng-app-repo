@@ -16,9 +16,13 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar navbar-collapse collapse">
             <div class="sidebar-sticky navbar-nav pt-3">
                 <mat-selection-list class="nav-item" #navopts role="list" [multiple]="false" (selectionChange)="onGroupsChange(navopts.selectedOptions.selected)">
-                    <mat-list-option class="list-options" *ngFor="let option of navOptions" [value]="option" (click)="closeMenu()">
+                    <!--<mat-list-option class="list-options" *ngFor="let option of navOptions" [value]="option" (click)="closeMenu()">
                         {{option}}
-                    </mat-list-option>
+                    </mat-list-option>-->
+                    <mat-list-option class="list-options" [value]="homeOpt" (click)="closeMenu()">Home</mat-list-option>
+                    <mat-list-option class="list-options" [value]="flightsOpt" (click)="closeMenu()">1. Flights</mat-list-option>
+                    <mat-list-option class="list-options" [value]="weatherOpt" (click)="closeMenu()">2. Weather</mat-list-option>
+                    <mat-list-option class="list-options" [value]="manufacturersOpt" (click)="closeMenu()">3. Manufacturers</mat-list-option>
                 </mat-selection-list>
             </div>
         </nav>

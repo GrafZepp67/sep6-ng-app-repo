@@ -50,7 +50,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { RadioButtonsComponent } from './reusable-components/radio-buttons/radio-buttons.component';
 import { FormsModule } from '@angular/forms';
-import { MatRippleModule } from '@angular/material/core'
+import { MatRippleModule } from '@angular/material/core';
+import { SectionWelcomeComponent } from './sections/section-welcome/section-welcome.component'
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { MatRippleModule } from '@angular/material/core'
     SectionDashboardComponent,
     FlightsPage5Component,
     RadioButtonsComponent,
+    SectionWelcomeComponent,
   ],
   imports: [
     BrowserModule,

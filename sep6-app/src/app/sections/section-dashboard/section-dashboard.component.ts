@@ -21,7 +21,7 @@ export class SectionDashboardComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.setActiveTabGroup("1. Flights");
+    this.setActiveTabGroup("home");
   }
 
   setActiveTabGroup(value : string)
