@@ -32,7 +32,6 @@ export class SectionHomeComponent implements OnInit {
   public subscription = this.linkSubject$.subscribe((data: any) => 
   {
     this.activeLink = data;
-    console.log(this.activeLink);
   });
 
   public updateTabSubject(newActiveLink: any) 

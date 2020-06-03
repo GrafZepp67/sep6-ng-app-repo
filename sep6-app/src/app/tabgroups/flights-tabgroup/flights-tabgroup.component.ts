@@ -78,8 +78,6 @@ export class FlightsTabgroupComponent implements AfterViewInit {
 
   ngAfterViewInit() 
   {    
-    console.log("FLights tabgroup afterView init!")
-
     this.activeTab = this.tabGroup.selectedIndex;
     this.updateTabSubject(this.activeTab);
   }  

@@ -121,16 +121,12 @@ export class WeatherPage3Component {
 
   loadItemsToScatterChartDatasets(items: any) 
   {
-    for(let i = 0; i < items.length; i++)
-    {
+    for(let i = 0; i < items.length; i++) {
       const DATA_POINT: ScatterChartPoint ={
-        //x: moment(items[i].time_epoch),
-        x: moment.unix(items[i].time_epoch).format('MMM DD YY'),
-        y: items[i].jfk_temp
-      };
-
-      JFK_DATASET.push(DATA_POINT);
-    }    
+        x: moment.unix(items[i].time_epoch)
+            .format('MMM DD YY'),
+        y: items[i].jfk_temp };
+      JFK_DATASET.push(DATA_POINT); }    
   }
 
   loadChartWithData()

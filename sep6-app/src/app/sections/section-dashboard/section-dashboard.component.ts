@@ -13,9 +13,7 @@ export class SectionDashboardComponent implements OnInit {
   constructor(private homeComponent: SectionHomeComponent) 
   {
     homeComponent.linkSubject.subscribe((data) => {
-
       this.selectedLink = data;
-      console.log("Dashboard observed change in nav link selection, selected tab : " + this.selectedLink);
     })
   } 
 

@@ -69,16 +69,15 @@ export class ManufacturersPage1Component {
     const DATA_ARRAY: number[] = [];
     const LABEL_ARRAY: string[] = [];
 
-    for(let i = 0; i < items.length; i++)
-    {
+    for(let i = 0; i < items.length; i++){
       const DATA: number = items[i].count;
       const LABEL: string = items[i].manufacturer;
-
       DATA_ARRAY.push(DATA);
-      LABEL_ARRAY.push(LABEL);
-    }
+      LABEL_ARRAY.push(LABEL);}
 
-    this.barChartData = [{data: DATA_ARRAY, label: 'Number of Planes'}];
+    this.barChartData = [
+      {data: DATA_ARRAY, 
+       label: 'Number of Planes'}];
     this.barChartLabels = LABEL_ARRAY;
   }  
 }

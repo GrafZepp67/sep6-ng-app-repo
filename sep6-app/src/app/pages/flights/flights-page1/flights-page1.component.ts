@@ -74,11 +74,9 @@ export class FlightsPage1Component {
     {
       const DATA: number = items[i].flights;
       const LABEL: string = items[i].month;
-
       DATA_ARRAY.push(DATA);
       LABEL_ARRAY.push(LABEL);
     }
-
     this.barChartData = [{data: DATA_ARRAY, label: 'Total number of flights/month'}];
     this.barChartLabels = LABEL_ARRAY;
   }
