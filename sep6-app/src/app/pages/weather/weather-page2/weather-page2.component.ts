@@ -30,6 +30,10 @@ export class WeatherPage2Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    title:{
+      display: true,
+      text:"For each of the three origins, all temperatures attributes in degree Celsius"
+    },
     maintainAspectRatio: false,
     animation:
     {
@@ -167,8 +171,8 @@ export class WeatherPage2Component {
         label: 'LGA',
         pointRadius: 2,
         pointBackgroundColor: 'rgba(255, 255, 255, 0)',
-        pointBorderColor: 'yellow',
-        backgroundColor: 'yellow'
+        pointBorderColor: 'blue',
+        backgroundColor: 'blue'
       }
     ]
   }

@@ -42,7 +42,6 @@ export class AuthService {
     const credential = await this.afAuth.signInWithEmailAndPassword(email, password)
     .then((credential) => {
       this.ngZone.run(() => {
-        //this.router.navigate(['dashboard']);
         this.router.navigate(['/dashboard']);
       });
       this.updateUserData(credential.user);

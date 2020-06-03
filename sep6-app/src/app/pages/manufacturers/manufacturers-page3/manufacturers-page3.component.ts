@@ -20,7 +20,11 @@ export class ManufacturersPage3Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"The number of planes of each Airbus Model"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
 
   public items: ManFunc3Model[] = [];
 

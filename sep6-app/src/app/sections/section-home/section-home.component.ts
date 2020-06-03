@@ -52,7 +52,7 @@ export class SectionHomeComponent implements OnInit {
   }
 
   closeMenu() {
-    var isMobile = /iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|Android/i.test(navigator.userAgent);
+    var isMobile = /iPhone|iPod|BlackBerry|Opera Mini|IEMobile|Android/i.test(navigator.userAgent);
     if (isMobile) {
       document.getElementById('navButton').click();
    }

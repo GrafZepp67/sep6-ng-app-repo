@@ -40,7 +40,7 @@
 
 .btn-signin {
     width: 100%;
-    background-color: rgba(220, 20, 60, 0);
+    background-color: rgba(220, 20, 60, 0.63);
     border-color: crimson;
 }
 

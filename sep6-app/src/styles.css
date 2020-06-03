@@ -2,7 +2,7 @@
 html,
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: black;
+    background-color: rgb(140, 166, 207) !important;
     color: white;
     margin: 0 !important;
     padding: 0 !important;
@@ -17,14 +17,20 @@ body {
 .mat-tab-label {
     font-size: 16px;
     color: white !important;
-    background-color: teal !important;
+    background-color: rgb(71, 80, 94) !important;
 }
 
 .mat-tab-label::selection {
     background-color: red !important;
 }
 
+.mat-card {
+    padding: 0px !important;
+    color: crimson !important;
+}
+
 .mat-card .mat-focus-indicator {
+    padding: 0px !important;
     top: 25vh !important;
     height: 75vh;
 }
@@ -35,14 +41,14 @@ body {
 }
 
 .mat-card {
-    background-color: #161A1E !important;
+    background-color: whitesmoke !important;
     transition: none !important;
     box-shadow: none !important;
 }
 
 .mat-card-content {
     color: white;
-    background-color: #161A1E !important;
+    background-color: whitesmoke !important;
 }
 
 .pgr-spinner {
@@ -61,13 +67,16 @@ canvas {
     border-color: crimson;
 }
 
+.mat-radio-button {
+    color: black !important;
+}
+
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: crimson;
+    color: black !important;
 }
 
 .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    color: rgb(66, 134, 244);
-    background-color: cyan;
+    background-color: crimson !important;
 }
 
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
@@ -88,7 +97,8 @@ canvas {
 }
 
 .mat-ink-bar {
-    background-color: green;
+    height: 5px !important;
+    background-color: crimson !important;
 }
 
 .md-tab-label {
@@ -103,4 +113,12 @@ canvas {
 
 #routerParent {
     width: 100%;
+}
+
+.spinnerText {
+    color: crimson !important;
+}
+
+.sepLogo {
+    text-align: center;
 }

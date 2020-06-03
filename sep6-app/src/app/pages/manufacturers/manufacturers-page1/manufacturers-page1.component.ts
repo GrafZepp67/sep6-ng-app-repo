@@ -20,7 +20,11 @@ export class ManufacturersPage1Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"The manufacturers that have more than 200 planes"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {beginAtZero:true}}]}};
   
   public items: ManFunc1Model[] = [];
 

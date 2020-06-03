@@ -30,6 +30,10 @@ export class WeatherPage4Component {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    title:{
+      display: true,
+      text:"The daily mean temperature (in Celsius) for each origin"
+    },
     maintainAspectRatio: false,
     scales: {
       xAxes: [{
@@ -68,8 +72,8 @@ export class WeatherPage4Component {
       label: 'LGA',
       pointRadius: 2,
       pointBackgroundColor: 'rgba(255, 255, 255, 0)',
-      pointBorderColor: 'yellow',
-      backgroundColor: 'yellow'
+      pointBorderColor: 'blue',
+      backgroundColor: 'blue'
     },
   ];
 
@@ -163,8 +167,8 @@ export class WeatherPage4Component {
         label: 'LGA',
         pointRadius: 3,
         pointBackgroundColor: 'rgba(255, 255, 255, 0)',
-        pointBorderColor: 'yellow',
-        backgroundColor: 'yellow'
+        pointBorderColor: 'blue',
+        backgroundColor: 'blue'
       }
     ]
   }

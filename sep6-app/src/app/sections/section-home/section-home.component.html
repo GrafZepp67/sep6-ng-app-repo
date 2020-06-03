@@ -3,7 +3,7 @@
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="navButton">	
       <span class="navbar-toggler-icon"></span>	
     </button>
-    <span class="user-greeting" *ngIf="authService.user as user">Hello, {{ user.email }} !</span>
+    <span class="user-greeting" *ngIf="authService.user as user">Signed in: {{ user.email }}</span>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="btn btn-primary btn-logoff" (click)="authService.logout()">Sign out  <i class="fa fa-sign-out" aria-hidden="true"></i></a>
@@ -16,21 +16,16 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar navbar-collapse collapse">
             <div class="sidebar-sticky navbar-nav pt-3">
                 <mat-selection-list class="nav-item" #navopts role="list" [multiple]="false" (selectionChange)="onGroupsChange(navopts.selectedOptions.selected)">
-                    <!--<mat-list-option class="list-options" *ngFor="let option of navOptions" [value]="option" (click)="closeMenu()">
-                        {{option}}
-                    </mat-list-option>-->
-                    <mat-list-option class="list-options" [value]="homeOpt" (click)="closeMenu()" [routerLink]="['./home']">Home</mat-list-option>
-                    <mat-list-option class="list-options" [value]="flightsOpt" (click)="closeMenu()" [routerLink]="['./flights']">1. Flights</mat-list-option>
-                    <mat-list-option class="list-options" [value]="weatherOpt" (click)="closeMenu()" [routerLink]="['./weather']">2. Weather</mat-list-option>
-                    <mat-list-option class="list-options" [value]="manufacturersOpt" (click)="closeMenu()" [routerLink]="['./manufacturers']">3. Manufacturers</mat-list-option>
+                    <mat-list-option class="list-options" [value]="homeOpt" (click)="closeMenu()" [routerLink]="['./home']"><span><i class="fa fa-home" aria-hidden="true"></i> Home</span></mat-list-option>
+                    <mat-list-option class="list-options" [value]="flightsOpt" (click)="closeMenu()" [routerLink]="['./flights']"><span><i class="fa fa-plane" aria-hidden="true"></i> Flights</span></mat-list-option>
+                    <mat-list-option class="list-options" [value]="weatherOpt" (click)="closeMenu()" [routerLink]="['./weather']"><span><i class="fa fa-cloud" aria-hidden="true"></i> Weather</span></mat-list-option>
+                    <mat-list-option class="list-options" [value]="manufacturersOpt" (click)="closeMenu()" [routerLink]="['./manufacturers']"><span><i class="fa fa-industry" aria-hidden="true"></i> Manufacturers</span></mat-list-option>
                 </mat-selection-list>
             </div>
         </nav>
 
         <main role="main" id="dashboard-content" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3 border-bottom">
-                <!--<router-outlet class="routerOut"></router-outlet>-->
-                <!--<app-section-dashboard class="tabGroup"></app-section-dashboard>-->
                 <div fxFlex fxLayout="column" id="routerParent">
                     <router-outlet></router-outlet>
                 </div>

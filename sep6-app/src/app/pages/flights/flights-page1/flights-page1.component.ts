@@ -21,7 +21,11 @@ export class FlightsPage1Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 11700}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"Total number of flights per month"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 11700}}]}};
   
   public items: FlightsFunc1Model[] = [];
 

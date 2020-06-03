@@ -20,7 +20,11 @@ export class FlightsPage3Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"The top-10 destinations and how many flights were made to these"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
 
   public respItems: FlightsFunc3Model[] = [];
   public groupedItems: any[] = [];

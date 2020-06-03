@@ -126,7 +126,11 @@ export class FlightsPage2Component {
 
   showFrequencyChart(items: any)
   {
-    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
+    this.barChartOptions = {title:{
+      display: true,
+      text:"Total number of flights per month from the three origins"
+    },
+    scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 0}}]}};
 
     const FREQ_FLIGHTS_JFK_ARRAY: number[] = [];
     const FREQ_FLIGHTS_LGA_ARRAY: number[] = [];
@@ -163,7 +167,11 @@ export class FlightsPage2Component {
 
   showStackedFrequencyChart(items: any)
   {
-    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
+    this.barChartOptions = {title:{
+      display: true,
+      text:"Total number of flights per month from the three origins"
+      },
+      scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
       xAxes: [{ stacked: true }], 
       yAxes: [{ stacked: true, ticks: {beginAtZero:true}}]
       }
@@ -204,7 +212,11 @@ export class FlightsPage2Component {
 
   showStackedPercentageChart(items: any)
   {
-    this.barChartOptions = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
+    this.barChartOptions = {title:{
+      display: true,
+      text:"Total number of flights per month from the three origins"
+    },
+    scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {
       xAxes: [{ stacked: true }], 
       yAxes: [{ stacked: true, ticks: {beginAtZero:true}}]
       }

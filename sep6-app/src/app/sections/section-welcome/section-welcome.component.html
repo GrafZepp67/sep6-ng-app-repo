@@ -1,1 +1,1 @@
-<p>Welcome! Please use the navigation on the left to navigate.</p>
+<p *ngIf="authService.user as user">Welcome {{ user.email }} ! Please use the navigation on the left to navigate.</p>

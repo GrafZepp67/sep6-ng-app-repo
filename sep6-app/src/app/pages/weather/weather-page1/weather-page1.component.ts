@@ -20,7 +20,11 @@ export class WeatherPage1Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 8700}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"Number of weather observations for the origins in a table"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 8700}}]}};
   
   public items: WeatherFunc1Model[] = [];
 

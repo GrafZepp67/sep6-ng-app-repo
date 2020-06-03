@@ -20,7 +20,11 @@ export class FlightsPage4Component {
   public barChartLabels: string[] = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartOptions: any = {scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 100}}]}};
+  public barChartOptions: any = {title:{
+    display: true,
+    text:"The mean airtime of each of the origins in a table"
+  },
+  scaleShowVerticalLines: true, responsive: true, maintainAspectRatio: false, scales: {yAxes: [{ticks: {min: 100}}]}};
   
   public items: FlightsFunc4Model[] = [];
 
